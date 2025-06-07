@@ -1,41 +1,45 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Enable static export
+  // Basic configuration
+  reactStrictMode: true,
   output: 'export',
   distDir: 'out',
   trailingSlash: true,
-  
-  // Basic configuration
-  reactStrictMode: true,
   
   // Disable image optimization for static export
   images: {
     unoptimized: true,
   },
   
-  // Disable server-side features
-  experimental: {
-    serverActions: false,
-  },
-  
-  // Ignore TypeScript and ESLint errors during build
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // Experimental features (empty as we don't need any for static export)
+  experimental: {},
   
   // Webpack configuration
   webpack: (config) => {
-    // Handle file-loader for static files
+    // Handle Node.js built-ins
+    config.resolve.fallback = {
+      fs: false,
+      module: false,
+    };
+    
+    // Handle static assets
     config.module.rules.push({
       test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/,
       type: 'asset/resource',
     });
     
     return config;
+  },
+  
+  // Skip type checking during build
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  
+  // Skip linting during build
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 
