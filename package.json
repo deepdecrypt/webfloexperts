@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "preview": "next build && next start",
+    "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "export": "next build && next export"
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^4.39.3",

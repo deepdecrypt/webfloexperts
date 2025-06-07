@@ -10,8 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
+# Contentful
+cms/
+contentful/
 
 # next.js
 /.next/

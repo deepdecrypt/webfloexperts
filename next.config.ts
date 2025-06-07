@@ -1,15 +1,22 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Ensure static export is disabled
-  output: undefined,
+  // Enable static export
+  output: 'export',
+  distDir: 'out',
+  trailingSlash: true,
   
   // Basic configuration
   reactStrictMode: true,
   
-  // Image optimization
+  // Disable image optimization for static export
   images: {
-    domains: ['images.ctfassets.net'],
+    unoptimized: true,
+  },
+  
+  // Disable server-side features
+  experimental: {
+    serverActions: false,
   },
   
   // Ignore TypeScript and ESLint errors during build
@@ -20,16 +27,16 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   
-  // Disable static optimization for all pages
-  experimental: {
-    serverActions: true,
-    serverComponentsExternalPackages: ['contentful']
+  // Webpack configuration
+  webpack: (config) => {
+    // Handle file-loader for static files
+    config.module.rules.push({
+      test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/,
+      type: 'asset/resource',
+    });
+    
+    return config;
   },
-  
-  // Enable trailing slashes for better compatibility
-  trailingSlash: true,
-  // Add basePath if your site is not at the root of the domain
-  // basePath: '/your-base-path',
 };
 
 export default nextConfig;
