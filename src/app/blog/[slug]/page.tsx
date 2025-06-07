@@ -1,22 +1,23 @@
 import { notFound } from 'next/navigation';
 
-// This tells Next.js to render this page at build time
 export const dynamic = 'auto';
-
-// This tells Next.js to not try to revalidate this page
 export const revalidate = false;
 
-// This tells Next.js to not attempt to render this page on the server
-export const dynamicParams = false;
-
-// This function tells Next.js which paths to pre-render at build time
 export async function generateStaticParams() {
-  // Return an empty array to indicate no dynamic paths should be pre-rendered
-  return [];
+  // Return a single static path with a 404 page
+  return [{ slug: '404' }];
 }
 
 export default function BlogPost() {
   // This will show a 404 page
-  notFound();
-  return null;
+  return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-center p-8">
+        <h1 className="text-5xl font-bold mb-4">404 - Blog Post Not Found</h1>
+        <p className="text-xl">
+          The blog post you're looking for doesn't exist or has been removed.
+        </p>
+      </div>
+    </div>
+  );
 }
