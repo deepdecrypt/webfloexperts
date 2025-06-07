@@ -1,10 +1,10 @@
-// This tells Next.js to generate a static version of this page
-export const dynamic = 'error';
+// This page is statically generated at build time
+export const dynamic = 'auto';
 
-// This prevents this page from being statically generated at request time
+// This page doesn't use dynamic routes
 export const dynamicParams = false;
 
-// This tells Next.js to not try to revalidate this page
+// This page doesn't need revalidation
 export const revalidate = false;
 
 export default function Blog() {
