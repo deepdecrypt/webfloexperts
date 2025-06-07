@@ -1,14 +1,23 @@
 import { notFound } from 'next/navigation';
 
-// This function tells Next.js which paths to pre-render at build time
+// Generate static paths at build time
 export async function generateStaticParams() {
-  // Return an empty array since we're not pre-rendering any blog posts
+  // Return an empty array to indicate no pages should be pre-rendered
+  // This is a valid configuration for static export
   return [];
 }
 
-export const dynamic = 'force-static';
+// This prevents this route from being statically generated at request time
+export const dynamic = 'error';
 
 export default function BlogPost() {
+  // This will show a 404 page
   notFound();
   return null;
 }
+
+// This tells Next.js to not attempt to render this page on the server
+export const dynamicParams = false;
+
+// This tells Next.js to not try to revalidate this page
+export const revalidate = false;

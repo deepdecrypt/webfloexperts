@@ -1,3 +1,12 @@
+// This tells Next.js to generate a static version of this page
+export const dynamic = 'error';
+
+// This prevents this page from being statically generated at request time
+export const dynamicParams = false;
+
+// This tells Next.js to not try to revalidate this page
+export const revalidate = false;
+
 export default function Blog() {
   return (
     <div className="min-h-screen flex items-center justify-center">
@@ -11,4 +20,4 @@ export default function Blog() {
       </div>
     </div>
   );
-} 
+}
