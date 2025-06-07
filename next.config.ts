@@ -1,21 +1,32 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  distDir: 'out',
+  // Ensure static export is disabled
+  output: undefined,
+  
+  // Basic configuration
+  reactStrictMode: true,
+  
+  // Image optimization
   images: {
-    unoptimized: true,
-    domains: ['images.ctfassets.net'], // Add your Contentful image domain if needed
+    domains: ['images.ctfassets.net'],
+  },
+  
+  // Ignore TypeScript and ESLint errors during build
+  typescript: {
+    ignoreBuildErrors: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
-  typescript: {
-    ignoreBuildErrors: true,
+  
+  // Disable static optimization for all pages
+  experimental: {
+    serverActions: true,
+    serverComponentsExternalPackages: ['contentful']
   },
-  // Disable React StrictMode for static export
-  reactStrictMode: false,
-  // Enable static export
+  
+  // Enable trailing slashes for better compatibility
   trailingSlash: true,
   // Add basePath if your site is not at the root of the domain
   // basePath: '/your-base-path',

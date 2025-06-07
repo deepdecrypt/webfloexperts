@@ -1,6 +1,7 @@
 [build]
   command = "npm install && npm run build"
-  publish = "out"
+  publish = ".next"
+  functions = ".next/functions"
 
 [build.environment]
   NODE_VERSION = "20.11.1"
@@ -10,11 +11,13 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# Handle all routes with Next.js
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/.netlify/functions/next"
   status = 200
 
+# Security headers
 [[headers]]
   for = "/*"
   [headers.values]
