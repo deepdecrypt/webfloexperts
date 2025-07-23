@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: [
-          'Manrope',
+          'var(--font-jakarta)',
           'ui-sans-serif',
           'system-ui',
           'sans-serif',

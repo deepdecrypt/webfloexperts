@@ -15,54 +15,69 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-black text-white">
       <main>
         {/* Hero Section */}
-        <section className="relative py-32 md:py-24 text-center overflow-hidden">
-          {/* Removed background gradient layer */}
-
-          <div className="container mx-auto px-4 z-10 relative">
-            {/* Tag */}
-            <span className="inline-block px-6 py-2 mb-6 text-sm font-semibold rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-accent uppercase tracking-wide">
-              + Design and Webflow Agency
+        <section className="relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px] flex flex-col sm:flex-row items-center justify-center px-2 sm:px-4 md:px-8">
+          {/* On mobile, show text block above image. On sm+, overlay text on image. */}
+          <div className="block sm:hidden w-full">
+            <div className="max-w-4xl w-full mx-auto flex flex-col items-center px-2 text-center pt-12">
+              {/* Badge */}
+              <span className="inline-block bg-black/80 text-white px-4 sm:px-8 py-1.5 rounded-full text-sm sm:text-lg font-normal shadow-md mb-4 sm:mb-8 pointer-events-auto" style={{ border: '1.5px solid #232326' }}>
+                Skip Dev Team. Save Time. Drive Results.
             </span>
-
-            {/* Main Heading - Reverted to old gradient style */}
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">
-              Webflow websites that convert <br className="hidden md::block"/> and scale for high-growth B2B
+              {/* Heading */}
+              <h1 className="text-4xl md:text-7xl font-medium leading-tight text-white mb-4 pointer-events-auto" style={{ lineHeight: 1.1 }}>
+                Launch Your MVP<br />
+                <span className="bg-gradient-to-b from-white to-[#7fdaff] text-transparent bg-clip-text">&amp; Website 10x Faster</span>
             </h1>
-
             {/* Subheading */}
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-300 opacity-90">
-              We are experts in creating websites that resonate with and convert your ICP, build your brand, and scale on Webflow.
+              <p className="text-lg md:text-2xl mb-10 max-w-2xl mx-auto text-white/80 pointer-events-auto">
+                We move the needle with websites that drive sales, MVPs that hit product–market fit, and automation that scales your business.
             </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-              <Link
-                href="/book-a-call"
-                className="px-10 py-4 rounded-lg font-bold text-lg text-white shadow-lg hover:opacity-90 transition-all duration-300 focus:outline-none focus:ring-2 transform hover:-translate-y-1 border-2 border-transparent"
-                style={{
-                   background: '#1a1a1a',
-                   borderImage: 'linear-gradient(to right, #3F7F99, #69D4FF) 1',
-                   borderRadius: '0.5rem'
-                }}
+              {/* CTA Button */}
+              <a
+                href="/pricing"
+                className="pointer-events-auto px-8 py-3 rounded-xl text-lg font-semibold text-black bg-white shadow-lg hover:bg-gray-100 transition-all border border-white flex items-center gap-2"
+                style={{ boxShadow: '0 2px 16px 0 rgba(0,0,0,0.10)' }}
               >
-                Book a Call →
-              </Link>
-              <Link
-                href="/work"
-                className="px-10 py-4 rounded-lg font-bold text-lg border border-white/30 text-white backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/40 transform hover:-translate-y-1"
-                style={{ background: 'none', borderImage: 'none'}} /* Reverted style for See Work button */
-              >
-                See Work →
-              </Link>
+                See Pricing <span className="ml-1 text-xl">&rarr;</span>
+              </a>
             </div>
           </div>
+          <img src="/hero/hero.png" alt="Hero" className="w-full h-auto object-contain mt-[-100px] sm:mt-0" style={{ display: 'block' }} />
+          {/* Overlay Content for sm+ */}
+          <div className="hidden sm:flex absolute top-0 left-0 w-full flex-col items-center pointer-events-none">
+            <div className="max-w-4xl w-full mx-auto flex flex-col items-center px-4 text-center pt-[60px] md:pt-[100px]">
+              {/* Badge */}
+              <span className="inline-block bg-black/80 text-white px-4 sm:px-8 py-1.5 rounded-full text-sm sm:text-lg font-normal shadow-md mb-4 sm:mb-8 pointer-events-auto" style={{ border: '1.5px solid #232326' }}>
+                Skip Dev Team. Save Time. Drive Results.
+              </span>
+              {/* Heading */}
+              <h1 className="text-4xl md:text-7xl font-medium leading-tight text-white mb-4 pointer-events-auto" style={{ lineHeight: 1.1 }}>
+                Launch Your MVP<br />
+                <span className="bg-gradient-to-b from-white to-[#7fdaff] text-transparent bg-clip-text">&amp; Website 10x Faster</span>
+              </h1>
+              {/* Subheading */}
+              <p className="text-lg md:text-2xl mb-10 max-w-2xl mx-auto text-white/80 pointer-events-auto">
+                We move the needle with websites that drive sales, MVPs that hit product–market fit, and automation that scales your business.
+              </p>
+              {/* CTA Button */}
+              <a
+                href="/pricing"
+                className="pointer-events-auto px-8 py-3 rounded-xl text-lg font-semibold text-black bg-white shadow-lg hover:bg-gray-100 transition-all border border-white flex items-center gap-2"
+                style={{ boxShadow: '0 2px 16px 0 rgba(0,0,0,0.10)' }}
+              >
+                See Pricing <span className="ml-1 text-xl">&rarr;</span>
+              </a>
+            </div>
+          </div>
+          {/* Black Shade SVG Overlay at Bottom */}
+          <img src="/hero/Black Shade UI Kit.svg" alt="Black Shade Overlay" className="absolute left-0 bottom-0 w-full pointer-events-none" style={{ zIndex: 2 }} />
         </section>
 
         {/* Client Logos/Trust Bar Section */}
         <section className="py-12 bg-black border-y border-white/10 overflow-hidden">
           <div className="container mx-auto px-4">
-             <div className="flex justify-center mb-8">
-               <span className="text-gray-500 text-sm uppercase tracking-widest font-semibold">5+ Years of Design Experience</span>
+             <div className="flex justify-center items-center mb-8 w-full">
+               <span className="text-gray-500 text-sm uppercase tracking-widest font-semibold w-full text-center">Trusted by Brands Worldwide</span>
              </div>
             {/* Logos - Horizontal Auto-Scroll using react-fast-marquee */}
             <Marquee 
@@ -72,157 +87,335 @@ export default function Home() {
               pauseOnHover={true}
               className="py-4"
             >
-              <ul className="flex items-center [&_li]:mx-8 [&_img]:max-w-none">
-                <li><span className="text-gray-400 text-3xl font-bold flex-shrink-0 opacity-60">Logo A</span></li>
-                <li><span className="text-gray-400 text-3xl font-bold flex-shrink-0 opacity-60">Logo B</span></li>
-                <li><span className="text-gray-400 text-3xl font-bold flex-shrink-0 opacity-60">Logo C</span></li>
-                <li><span className="text-gray-400 text-3xl font-bold flex-shrink-0 opacity-60">Logo D</span></li>
-                {/* Duplicate the logos to ensure seamless loop */}
-                <li><span className="text-gray-400 text-3xl font-bold flex-shrink-0 opacity-60">Logo A</span></li>
-                <li><span className="text-gray-400 text-3xl font-bold flex-shrink-0 opacity-60">Logo B</span></li>
-                <li><span className="text-gray-400 text-3xl font-bold flex-shrink-0 opacity-60">Logo C</span></li>
-                <li><span className="text-gray-400 text-3xl font-bold flex-shrink-0 opacity-60">Logo D</span></li>
+              <ul className="flex items-center [&_li]:mx-8">
+                {[
+                  'www.vsttractors.com.png',
+                  'www.sahllak.com.png',
+                  'www.radical-rcm.com.png',
+                  'www.opmaint.com.png',
+                  'www.noorsaray.com.png',
+                  'www.mentormatch.com.png',
+                  'www.cloutgency.com.png',
+                  'www.chawellness.in.png',
+                  'uxgear.in.png',
+                  'www.deepdecrypt.com.png',
+                  'settlin.in.png',
+                  '5pillarsrealty.com.png',
+                ].map((logo, i) => {
+                  const domain = logo.replace(/\.(png|jpg|jpeg|svg|webp|avif)$/i, '');
+                  const url = domain.startsWith('www.') ? `https://${domain}` : `https://www.${domain}`;
+                  return (
+                    <li key={logo + i} className="flex items-center justify-center">
+                      <a href={url} target="_blank" rel="noopener noreferrer" className="block">
+                        <div className="flex items-center justify-center h-16 w-32 overflow-hidden bg-transparent">
+                          <img
+                            src={`/logo/${logo}`}
+                            alt={domain}
+                            className={`
+                              ${logo === 'www.mentormatch.com.png' ? 'h-20' :
+                                logo === 'www.chawellness.in.png' || logo === 'www.deepdecrypt.com.png' ? 'h-12' : 'h-full'}
+                              w-auto object-contain`
+                            }
+                            style={{}}
+                          />
+                        </div>
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </Marquee>
           </div>
         </section>
 
-        {/* What we do Section */}
+        {/* What we do Section (restored) */}
         <section className="py-20 bg-black text-white">
           {/* Reduced overall width with max-w-screen-lg */}
           <div className="container mx-auto px-4 max-w-screen-lg">
             <div className="text-center mb-12">
-              <span className="text-accent text-sm uppercase tracking-widest font-semibold">+ Agency Services</span>
-              <h2 className="text-4xl md:text-5xl font-extrabold mt-2 leading-tight">
-                What we do
+              <span className="text-xs font-semibold uppercase tracking-widest mb-3 block" style={{ color: '#69D4FF' }}>+ FULL SERVICE AGENCY</span>
+              <h2 className="text-lg md:text-4xl font-medium text-white mb-4 leading-tight max-w-[95vw] md:max-w-none mx-auto">
+                We build high-performing websites that<br />
+                actually drive traffic, attract leads, and<br />
+                accelerate business growth.
               </h2>
             </div>
 
-            {/* Services Cards Grid */}
-            {/* Refined grid for 2 wide cards on top, 3 narrower below on larger screens */}
-            {/* Adjusted grid columns and spans for 2x3 layout on large screens */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-              {/* Card 1: B2B Web Design (Wide on large screens) */}
-              {/* Adjusted col-span for lg:grid-cols-6 */}
-              {/* Adjusted padding to remove right and bottom padding */}
-              <div className="relative bg-white/[0.02] backdrop-blur-md rounded-xl pt-6 pl-6 pr-0 pb-0 border border-white/[0.08] flex flex-col md:col-span-2 lg:col-span-3 overflow-hidden">
-                {/* Gradient Overlay Effect - Adjusted opacity */}
-                <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
-                
-                {/* Card Content */}
-                <div className="relative z-10 flex flex-col h-full">
-                  {/* Placeholder for small Icon - made it smaller, adjusted background and added subtle shadow */}
-                  {/* Increased icon size */}
-                  <div className="w-11 h-11 bg-accent/20 rounded-full flex items-center justify-center mb-4 text-accent text-xl shadow-inner shadow-accent/50"> {/* Example Icon Content */}<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v-.228a4.5 4.5 0 014.477-4.477 2.25 2.25 0 011.942-.244l.994.244m1.958-.585a4.5 4.5 0 00-3.683-1.823A9.109 9.109 0 0012 15.75a9.058 9.058 0 00-1.89-.183m5.402 9.322m-3.672-1.569a4.5 4.5 0 013.325 3.325m-3.672-1.569C11.324 14.722 12 14.5 12 14.5s0 0 0 0l-3.325 3.325m1.958-.585a4.5 4.5 0 011.942.244l.994.244m0-6.516a4.5 4.5 0 00-3.683-1.823A9.109 9.109 0 0012 15.75a9.058 9.058 0 00-1.89-.183m5.402 9.322m-3.672-1.569a4.5 4.5 0 013.325 3.325m-3.672-1.569C11.324 14.722 12 14.5 12 14.5s0 0 0 0l-3.325 3.325M12 21l-3.325-3.325C8.676 14.722 12 14.5 12 14.5s0 0 0 0m-3.325 3.325a4.5 4.5 0 013.325-3.325M12 21l3.325-3.325C15.324 14.722 12 14.5 12 14.5s0 0 0 0m3.325-3.325a4.5 4.5 0 01-3.325 3.325" />
-</svg>
-</div>
-                <h3 className="text-xl font-bold mb-2">B2B Web Design</h3>
-                <p className="text-gray-400 text-sm leading-relaxed flex-grow">
-                  On-brand web design that not only looks great but is optimized to engage and convert.
+              {/* Card 1: B2B Web Design */}
+              <div className="bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] flex flex-col md:col-span-2 lg:col-span-3 overflow-hidden">
+                <img src="/services/MM Flowbase.png" alt="B2B Web Design" className="w-full h-40 object-cover rounded-t-xl" />
+                <div className="flex flex-col h-full p-6">
+                <h3 className="text-lg font-semibold text-white mb-2">Websites, CMS & eCom</h3>
+                <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
+                A premium website isn’t optional. It’s how you earn trust and drive conversions.
                 </p>
-                 {/* Placeholder for image/screenshots if needed - Added back top margin */}
-                 <div className="w-full h-36 bg-gray-800 rounded-lg mt-3"></div>
                 </div>
               </div>
 
-              {/* Card 2: Webflow Development (Takes remaining space on large screens) */}
-              {/* Added relative positioning and inner div for gradient effect */}
-               {/* Adjusted gradient overlay opacity */}
-               {/* Adjusted col-span for lg:grid-cols-6 */}
-               {/* Adjusted padding to remove right and bottom padding */}
-              <div className="relative bg-white/[0.02] backdrop-blur-md rounded-xl pt-6 pl-6 pr-0 pb-0 border border-white/[0.08] flex flex-col md:col-span-2 lg:col-span-3 overflow-hidden">
-                {/* Gradient Overlay Effect - Adjusted opacity */}
-                <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
-                
-                {/* Card Content */}
-                <div className="relative z-10 flex flex-col h-full">
-                   {/* Placeholder for small Icon - made it smaller, adjusted background and added subtle shadow */}
-                   {/* Increased icon size */}
-                   <div className="w-11 h-11 bg-accent/20 rounded-full flex items-center justify-center mb-4 text-accent text-xl shadow-inner shadow-accent/50"> {/* Example Icon Content */}<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
-</svg>
-</div>
-                <h3 className="text-xl font-bold mb-2">Webflow Development</h3>
-                <p className="text-gray-400 opacity-80 text-sm leading-relaxed flex-grow">
-                  Scale faster with a performant and optimized Webflow website.
+              {/* Card 2: Webflow Development */}
+              <div className="bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] flex flex-col md:col-span-2 lg:col-span-3 overflow-hidden">
+                <img src="/services/MM Flowbase 2.png" alt="Webflow Development" className="w-full h-40 object-cover rounded-t-xl" />
+                <div className="flex flex-col h-full p-6">
+                <h3 className="text-lg font-semibold text-white mb-2">MVP Development</h3>
+                <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
+                The right MVP saves time and money. Low-code helps you build, test, and improve faster.
                 </p>
-                {/* Placeholder for image/screenshots if needed - Added back top margin */}
-                <div className="w-full h-36 bg-gray-800 rounded-lg mt-3"></div>
                 </div>
               </div>
 
               {/* Card 3: Ongoing Support */}
-              {/* Added relative positioning and inner div for gradient effect */}
-               {/* Adjusted gradient overlay opacity */}
-               {/* Adjusted col-span for lg:grid-cols-6 */}
-               {/* Adjusted padding to remove right and bottom padding */}
-              <div className="relative bg-white/[0.02] backdrop-blur-md rounded-xl pt-6 pl-6 pr-0 pb-0 border border-white/[0.08] flex flex-col lg:col-span-2 overflow-hidden">
-                {/* Gradient Overlay Effect - Adjusted opacity */}
-                <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
-                
-                {/* Card Content */}
-                <div className="relative z-10 flex flex-col h-full">
-                   {/* Placeholder for small Icon - made it smaller, adjusted background and added subtle shadow */}
-                   {/* Increased icon size */}
-                   <div className="w-11 h-11 bg-accent/20 rounded-full flex items-center justify-center mb-4 text-accent text-xl shadow-inner shadow-accent/50"> {/* Example Icon Content */}<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.858-2.596L2 16.5m4.509-1.114a3 3 0 005.857 2.596L22 7.928m-7.5 10.364L17.25 21H6.75a9 9 0 01-3.515-6.862L3 12a9 9 0 0114.874-7.644m-3.737 2.198l-.735.368m-.354 1.095l-.368.735M12 10.5l-.368-.735m-.735-.368 1.095-.354m7.644 3.737l-.735-.368.368.735M12 10.5l1.095.354.368-.735m-3.322 1.958L12 13.5m0-3l-1.095.354-.368-.735m3.322-1.958L12 10.5m0 3l1.095-.354-.368-.735m-3.322 1.958L12 13.5" />
-</svg>
-</div>
-                <h3 className="text-xl font-bold mb-2">Ongoing Support</h3>
-                <p className="text-gray-400 opacity-80 text-sm leading-relaxed flex-grow">
-                  A fast and reliable extension of your team.
+              <div className="bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] flex flex-col lg:col-span-2 overflow-hidden">
+                <img src="/services/MM Flowbase 3.png" alt="Ongoing Support" className="w-full h-40 object-cover rounded-t-xl" />
+                <div className="flex flex-col h-full p-6">
+                <h3 className="text-lg font-semibold text-white mb-2">SEO, CRO & Organic Growth</h3>
+                <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
+                Without traffic, your website’s just a brochure. SEO turns visits into revenue.
                 </p>
-                {/* Placeholder for content - Added back top margin */}
-                <div className="w-full h-36 bg-gray-800 rounded-lg mt-3"></div>
                 </div>
               </div>
 
               {/* Card 4: Website Strategy */}
-              {/* Added relative positioning and inner div for gradient effect */}
-               {/* Adjusted gradient overlay opacity */}
-               {/* Adjusted col-span for lg:grid-cols-6 */}
-               {/* Adjusted padding to remove right and bottom padding */}
-              <div className="relative bg-white/[0.02] backdrop-blur-md rounded-xl pt-6 pl-6 pr-0 pb-0 border border-white/[0.08] flex flex-col lg:col-span-2 overflow-hidden">
-                {/* Gradient Overlay Effect - Adjusted opacity */}
-                <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
-                
-                {/* Card Content */}
-                <div className="relative z-10 flex flex-col h-full">
-                 {/* Placeholder for small Icon - made it smaller, adjusted background and added subtle shadow */}
-                 {/* Increased icon size */}
-                 <div className="w-11 h-11 bg-accent/20 rounded-full flex items-center justify-center mb-4 text-accent text-xl shadow-inner shadow-accent/50"> {/* Example Icon Content */}<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6a.75.75 0 00-.75-.75H5.625a.75.75 0 00-.75.75v11.25c0 .414.336.75.75.75h9.75a.75.75 0 00.75-.75v-4.5m-13.5-9L12 3m-7.5 3L7.5 3m7.5 3L12 3m0 18.75v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v3.375m-18 0h16.5a.75.75 0 00.75-.75V5.625a.75.75 0 00-.75-.75H3.375a.75.75 0 00-.75.75v12.75c0 .414.336.75.75.75z" />
-</svg>
-</div>
-                <h3 className="text-xl font-bold mb-2">Website Strategy</h3>
-                <p className="text-gray-400 opacity-80 text-sm leading-relaxed flex-grow">
-                  Expert strategy to get the most out of your website.
+              <div className="bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] flex flex-col lg:col-span-2 overflow-hidden">
+                <img src="/services/MM Flowbase 4.png" alt="Website Strategy" className="w-full h-40 object-cover rounded-t-xl" />
+                <div className="flex flex-col h-full p-6">
+                <h3 className="text-lg font-semibold text-white mb-2">AI & Workflow Automation</h3>
+                <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
+                Automation triples your output from lead follow-ups to order tracking, and scale like never before.
                 </p>
-                {/* Placeholder for content like conversion rate chart - Added back top margin */}
-                <div className="w-full h-36 bg-gray-800 rounded-lg mt-3"></div>
                 </div>
               </div>
 
               {/* Card 5: Website Migration */}
-              {/* Added relative positioning and inner div for gradient effect */}
-               {/* Adjusted gradient overlay opacity */}
-               {/* Adjusted col-span for lg:grid-cols-6 */}
-               {/* Adjusted padding to remove right and bottom padding */}
-              <div className="relative bg-white/[0.02] backdrop-blur-md rounded-xl pt-6 pl-6 pr-0 pb-0 border border-white/[0.08] flex flex-col lg:col-span-2 overflow-hidden">
-                {/* Gradient Overlay Effect - Adjusted opacity */}
-                <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
-                
-                {/* Card Content */}
-                <div className="relative z-10 flex flex-col h-full">
-                 {/* Placeholder for small Icon - made it smaller, adjusted background and added subtle shadow */}
-                 {/* Increased icon size */}
-                 <div className="w-11 h-11 bg-accent/20 rounded-full flex items-center justify-center mb-4 text-accent text-xl shadow-inner shadow-accent/50"> {/* Example Icon Content */}<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M9 13.5l3 3m0 0l3-3m-3 3v-6m1.06-4.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
-</svg>
-</div>
-                <h3 className="text-xl font-bold mb-2">Website Migration</h3>
-                <p className="text-gray-400 opacity-80 text-sm leading-relaxed flex-grow">
-                  Seamlessly migrate to the best website platform, Webflow.
+              <div className="bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] flex flex-col lg:col-span-2 overflow-hidden">
+                <img src="/services/MM Flowbase (1).png" alt="Website Migration" className="w-full h-40 object-cover rounded-t-xl" />
+                <div className="flex flex-col h-full p-6">
+                <h3 className="text-lg font-semibold text-white mb-2">Extend & Integrate</h3>
+                <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
+                Extend your stack with custom integrations, APIs, and backend logic.
                 </p>
-                 {/* Placeholder for migration icons like C, W, box, Webflow - Added back top margin */}
-                 <div className="w-full h-36 bg-gray-800 rounded-lg mt-3"></div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What Makes Us Stand Out Section */}
+        <section className="py-20 text-white border-t border-b border-[#23272e]" style={{ background: 'linear-gradient(to bottom,rgb(5, 56, 85),rgba(0, 25, 32, 0.4))' }}>
+          <div className="container mx-auto px-4 max-w-screen-lg">
+            <div className="mb-16">
+              <h2 className="text-lg md:text-5xl font-medium leading-tight">
+                What Makes Us<br />
+                Stand Out.
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+              {[
+                {
+                  icon: (
+                    // Lightning Bolt Icon (Launch in Weeks)
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 2L3 14h7v8l10-12h-7V2z" />
+</svg>
+                  ),
+                  title: 'Launch in Weeks, Not Months',
+                  description: 'Fast, marketing-ready websites so you avoid endless dev sprints.',
+                },
+                {
+                  icon: (
+                    // Checkmark Badge Icon (Marketing-Ready from Day One)
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-white">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
+                    </svg>
+                  ),
+                  title: 'Marketing-Ready from Day 1',
+                  description: 'SEO, Geo-targeting, and AEO for higher conversions and visibility.',
+                },
+                {
+                  icon: (
+                    // Funnel Icon (Full-Funnel Experts)
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 4h18M4 8h16M6 12h12M8 16h8M10 20h4" />
+                    </svg>
+                  ),
+                  title: 'Full-Funnel Experts',
+                  description: 'Automated funnel across acquisition, activation and reactivation built to maximize growth.',
+                },
+                {
+                  icon: (
+                    // Line Graph Icon (Growth-First Thinking)
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-white">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l6-6 4 4 6-6" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 21h18" />
+                    </svg>
+                  ),
+                  title: 'Growth-First Thinking',
+                  description: 'Scalable landing pages and MVPs to quickly test and validate your ideas.',
+                },
+                {
+                  icon: (
+                    // Target Icon (Conversion-Driven Design)
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-white">
+                      <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5"/>
+                      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5"/>
+                      <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                    </svg>
+                  ),
+                  title: 'Conversion-Driven Design',
+                  description: 'CTAs, forms, and flows designed to boost leads, signups, and sales.',
+                },
+                {
+                  icon: (
+                    // Bar Chart Icon (Data-Backed Decisions)
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-white">
+                      <rect x="4" y="10" width="3" height="7" rx="1" stroke="currentColor" strokeWidth="1.5"/>
+                      <rect x="10.5" y="6" width="3" height="11" rx="1" stroke="currentColor" strokeWidth="1.5"/>
+                      <rect x="17" y="13" width="3" height="4" rx="1" stroke="currentColor" strokeWidth="1.5"/>
+                    </svg>
+                  ),
+                  title: 'Data-Backed Decisions',
+                  description: 'Heatmaps, session recording, and analytics for smarter, faster UX improvements.',
+                },
+                {
+                  icon: (
+                    // Chip/Circuit Icon (AI-Powered Pipeline)
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
+                      <rect x="7" y="7" width="10" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 9V7a3 3 0 013-3h2M20 9V7a3 3 0 00-3-3h-2M4 15v2a3 3 0 003 3h2m10-5v2a3 3 0 01-3 3h-2" />
+                    </svg>
+                  ),
+                  title: 'AI-Powered Pipeline',
+                  description: 'AI calling agent automates sales, support, and follow-ups so you save time.',
+                },
+                {
+                  icon: (
+                    // Lock Icon (Secure by Default)
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-white">
+                      <rect x="6" y="10" width="12" height="8" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 10V7a3 3 0 016 0v3" />
+                    </svg>
+                  ),
+                  title: 'Secure by Default',
+                  description: 'SSL, bot protection, and GDPR compliance to keep your site safe.',
+                },
+                {
+                  icon: (
+                    // Layers Icon (Scale Without Rebuilding)
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-white">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 7l9-4 9 4-9 4-9-4zm0 6l9 4 9-4m-9 4v4" />
+                    </svg>
+                  ),
+                  title: 'Scale Without Rebuilding',
+                  description: 'Adaptable, modular sites that grow with your business needs.',
+                },
+              ].map((item, index) => (
+                <div key={index}>
+                  <div className="flex items-center gap-x-3 mb-3">
+                    {item.icon}
+                    <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+</div>
+                  <p className="text-white/70 text-sm leading-relaxed">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Duplicated Services Section (after What Makes Us Stand Out) */}
+        <section className="py-20 bg-black text-white">
+          {/* Reduced overall width with max-w-screen-lg */}
+          <div className="container mx-auto px-4 max-w-screen-lg">
+            <div className="text-center mb-12">
+              <span className="text-xs font-semibold uppercase tracking-widest mb-3 block" style={{ color: '#69D4FF' }}>+ FULL SERVICE AGENCY</span>
+              <h2 className="text-lg md:text-4xl font-medium text-white mb-4 leading-tight max-w-[95vw] md:max-w-none mx-auto">
+                We build high-performing websites that<br />
+                actually drive traffic, attract leads, and<br />
+                accelerate business growth.
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                'image 96.png',
+                'image 95.png',
+                'image 93.png',
+                'image 92.png',
+                'image 91.png',
+                'image 90.png',
+                'image 89.png',
+                'image 88.png',
+                'Group 43046.png',
+                'Frame 427321906.png',
+                'Frame 427321905.png',
+              ].map((img, i) => {
+                // Generate a title from the filename
+                const title = img.replace(/\.[^/.]+$/, '').replace(/[_-]/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                return (
+                  <div key={img} className="relative bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] overflow-hidden flex flex-col">
+                    <div className="p-4 flex items-center justify-center w-full" style={{ minHeight: '200px', background: '#222' }}>
+                      <img
+                        src={`/work/${img}`}
+                        alt={title}
+                        className="max-w-full max-h-80 object-contain"
+                        style={{ display: 'block' }}
+                      />
+                </div>
+                <div className="p-6 pt-6 flex flex-col flex-grow">
+                      {/* Label */}
+                      <span className="inline-block py-1 text-xs font-semibold rounded uppercase" style={{ color: '#69D4FF' }}>FEATURED WORK</span>
+                  {/* Title */}
+                      <h3 className="text-lg font-semibold text-white mt-1">{title}</h3>
+                  {/* Description */}
+                      <p className="text-gray-300 text-sm mt-2 leading-relaxed flex-grow">This is a featured project image. Replace this with a real description if desired.</p>
+                      {/* Arrow Link */}
+                   <Link
+                     href="#"
+                     className="md:absolute md:bottom-6 md:right-6 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center border border-white/20 backdrop-blur-md hover:bg-white/20 transition-colors group transform transition-transform duration-200 ease-in-out hover:translate-x-1 hover:-translate-y-1 mt-4 md:mt-0 self-end"
+                   >
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white group-hover:text-accent transition-colors">
+                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                     </svg>
+                   </Link>
+                </div>
+              </div>
+                );
+              })}
+              {/* Full-width card at the end */}
+              <div
+                className="relative rounded-xl border border-white/[0.08] flex flex-col col-span-1 md:col-span-2 p-8 text-white"
+                style={{ background: 'linear-gradient(to bottom,rgb(5, 56, 85),rgba(0, 25, 32, 0.4))' }}
+              >
+                <h3 className="text-2xl font-bold mb-2">diiy</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-0 border-b-0">
+              {[ 'Hubspot', 'Salesforce', 'Zapier', 'Google Analytics', 'Mixpanel', 'Segment', 'Mailchimp', 'Pardot', 'ActiveCampaign', 'Shopify', 'Greenhouse', 'Marketo' ].map((name, index) => {
+                const isLastColumnSm = (index + 1) % 2 === 0;
+                const isLastColumnMd = (index + 1) % 3 === 0;
+                const isLastColumnLg = (index + 1) % 4 === 0;
+                const isLastColumnXl = (index + 1) % 4 === 0;
+
+                return (
+                  <div key={name} className={`bg-white/[0.02] rounded-none p-4 flex flex-col items-center justify-center text-gray-300 border border-white/10 relative overflow-hidden`}>
+                    <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
+                    <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
+                      {name !== 'And more' ? (
+                        <div className="w-12 h-12 mb-3 flex items-center justify-center text-gray-500">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4ZM12 6C9.79086 6 8 7.79086 8 10H10C10 8.89543 10.8954 8 12 8C13.1046 8 14 8.89543 14 10C14 11.1046 12.8954 12 11.7908 12H10V14H11.7908C14.5523 14 16 12.2091 16 10C16 7.79086 14.2091 6 12 6Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                      ) : (
+                        <div className="w-10 h-10 mb-2 flex items-center justify-center text-gray-500 text-2xl font-bold">
+                          ...
+                        </div>
+                      )}
+                      <span className="text-base font-semibold text-white">{name}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
               </div>
             </div>
           </div>
@@ -333,128 +526,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Our Work Section */}
-        <section className="py-20 bg-black text-white">
-          <div className="container mx-auto px-4 max-w-screen-lg">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-12 leading-tight text-center">Our works</h2>
-
-            {/* Filter Bar Placeholder - Removed */}
-
-            {/* Work Examples Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-              {/* Work Example Card 1 */}
-              <div className="relative bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] overflow-hidden flex flex-col">
-                {/* Image Placeholder - Wrapped in padded div */}
-                <div className="p-4">
-                   <div className="w-full h-48 bg-gray-800 rounded-lg"></div>
-                </div>
-                
-                <div className="p-6 pt-0 flex flex-col flex-grow">
-                  {/* Latest Tag */}
-                  <span className="inline-block px-2 py-1 text-xs font-semibold rounded uppercase" style={{ color: '#69D4FF' }}>• LATEST SAAS</span>
-                  {/* Title */}
-                  <h3 className="text-lg font-semibold text-white mt-1">Send a survey over text.</h3>
-                  {/* Description */}
-                  <p className="text-gray-300 text-sm mt-2 leading-relaxed flex-grow">Marketing site sprint with micro animations</p>
-
-                   {/* Link with Arrow Icon */}
-                   <Link
-                     href="#"
-                     className="md:absolute md:bottom-6 md:right-6 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center border border-white/20 backdrop-blur-md hover:bg-white/20 transition-colors group transform transition-transform duration-200 ease-in-out hover:translate-x-1 hover:-translate-y-1 mt-4 md:mt-0 self-end"
-                   >
-                     {/* Diagonal Arrow Icon */}
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white group-hover:text-accent transition-colors">
-                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                     </svg>
-                   </Link>
-                </div>
-              </div>
-
-              {/* Work Example Card 2 */}
-              <div className="relative bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] overflow-hidden flex flex-col">
-                {/* Image Placeholder - Wrapped in padded div */}
-                <div className="p-4">
-                   <div className="w-full h-48 bg-gray-800 rounded-lg"></div>
-                </div>
-                <div className="p-6 pt-0 flex flex-col flex-grow">
-                  {/* Latest Tag */}
-                  <span className="inline-block px-2 py-1 text-xs font-semibold rounded uppercase" style={{ color: '#69D4FF' }}>• LATEST AI SaaS</span>
-                  {/* Title */}
-                  <h3 className="text-lg font-semibold text-white mt-1">Distribution to Other Platforms</h3>
-                  {/* Description */}
-                  <p className="text-gray-300 text-sm mt-2 leading-relaxed flex-grow">Marketing site with scroll trigger animation</p>
-
-                   {/* Link with Arrow Icon */}
-                   <Link
-                     href="#"
-                     className="md:absolute md:bottom-6 md:right-6 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center border border-white/20 backdrop-blur-md hover:bg-white/20 transition-colors group transform transition-transform duration-200 ease-in-out hover:translate-x-1 hover:-translate-y-1 mt-4 md:mt-0 self-end"
-                   >
-                     {/* Diagonal Arrow Icon */}
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white group-hover:text-accent transition-colors">
-                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                     </svg>
-                   </Link>
-                </div>
-              </div>
-
-              {/* Work Example Card 3 */}
-              <div className="relative bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] overflow-hidden flex flex-col">
-                {/* Image Placeholder - Wrapped in padded div */}
-                <div className="p-4">
-                   <div className="w-full h-48 bg-gray-800 rounded-lg"></div>
-                </div>
-                <div className="p-6 pt-0 flex flex-col flex-grow">
-                  {/* Latest Tag */}
-                  <span className="inline-block px-2 py-1 text-xs font-semibold rounded uppercase" style={{ color: '#69D4FF' }}>• LATEST SAAS AI</span>
-                  {/* Title */}
-                  <h3 className="text-lg font-semibold text-white mt-1">Instant returns on your key metrics.</h3>
-                  {/* Description */}
-                  <p className="text-gray-300 text-sm mt-2 leading-relaxed flex-grow">Marketing one-pager with custom built-in interactive demo</p>
-
-                   {/* Link with Arrow Icon */}
-                   <Link
-                     href="#"
-                     className="md:absolute md:bottom-6 md:right-6 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center border border-white/20 backdrop-blur-md hover:bg-white/20 transition-colors group transform transition-transform duration-200 ease-in-out hover:translate-x-1 hover:-translate-y-1 mt-4 md:mt-0 self-end"
-                   >
-                     {/* Diagonal Arrow Icon */}
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white group-hover:text-accent transition-colors">
-                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                     </svg>
-                   </Link>
-                </div>
-              </div>
-
-              {/* Work Example Card 4 */}
-              <div className="relative bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] overflow-hidden flex flex-col">
-                {/* Image Placeholder - Wrapped in padded div */}
-                <div className="p-4">
-                   <div className="w-full h-48 bg-gray-800 rounded-lg"></div>
-                </div>
-                <div className="p-6 pt-0 flex flex-col flex-grow">
-                  {/* Latest Tag */}
-                  <span className="inline-block px-2 py-1 text-xs font-semibold rounded uppercase" style={{ color: '#69D4FF' }}>• LATEST WEB 3</span>
-                  {/* Title */}
-                  <h3 className="text-lg font-semibold text-white mt-1">Empowering Liquid Crypto Markets.</h3>
-                  {/* Description */}
-                  <p className="text-gray-300 text-sm mt-2 leading-relaxed flex-grow">Scroll trigger animation + custom Blender animations</p>
-
-                   {/* Link with Arrow Icon */}
-                   <Link
-                     href="#"
-                     className="md:absolute md:bottom-6 md:right-6 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center border border-white/20 backdrop-blur-md hover:bg-white/20 transition-colors group transform transition-transform duration-200 ease-in-out hover:translate-x-1 hover:-translate-y-1 mt-4 md:mt-0 self-end"
-                   >
-                     {/* Diagonal Arrow Icon */}
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white group-hover:text-accent transition-colors">
-                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                     </svg>
-                   </Link>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
+       
 
         {/* Our Process Section */}
         <section className="py-20 bg-black text-white">
@@ -603,217 +675,6 @@ export default function Home() {
                     <div className="font-bold text-lg text-white">Website Migration</div>
                     <div className="text-sm text-gray-300">Transition to Webflow with our industry-leading migration process to ensure a smooth migration.</div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Membership Section */}
-        <section className="py-20 bg-black text-white overflow-hidden">
-          <div className="container mx-auto px-4 max-w-screen-lg">
-            {/* Section Heading */}
-            <h2 className="text-4xl md:text-5xl font-extrabold text-center leading-tight mb-12">Membership</h2>
-
-            {/* Tabs */}
-            <div className="flex justify-center mb-12">
-              <div className="flex space-x-2 bg-white/[0.05] rounded-full p-1 border border-white/10">
-                <button
-                  className={`px-6 py-2 rounded-full text-sm font-semibold ${membershipTab === 'Standard' ? 'bg-white/10 text-white' : 'text-white/70 hover:text-white hover:bg-white/[0.05]'} transition-colors`}
-                  onClick={() => setMembershipTab('Standard')}
-                >
-                  <span className="inline-block mr-2">⚡</span> Standard
-                </button>
-                <button
-                  className={`px-6 py-2 rounded-full text-sm font-semibold ${membershipTab === 'Pro' ? 'bg-white/10 text-white' : 'text-white/70 hover:text-white hover:bg-white/[0.05]'} transition-colors`}
-                  onClick={() => setMembershipTab('Pro')}
-                >
-                   ⚡ Pro
-                </button>
-              </div>
-            </div>
-
-            {/* Tab Content */}
-            {membershipTab === 'Standard' && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Left Card: Join Designjoy */}
-                <div className="relative rounded-xl p-8 flex flex-col justify-between overflow-hidden"
-                   style={{ background: 'linear-gradient(to bottom right, #ff007f, #ff8a00, #e21a4b, #00b0ff, #ffc107)' }} /* Placeholder gradient */
-                >
-                   {/* Abstract shapes placeholder - Simplified representation */}
-                  <div className="absolute inset-0 opacity-30">
-                     {/* Basic circles as placeholders */}
-                     <div className="absolute w-24 h-24 bg-pink-600 rounded-full" style={{ top: '10%', left: '5%' }}></div>
-                     <div className="absolute w-20 h-20 bg-teal-400 rounded-full" style={{ top: '20%', right: '10%' }}></div>
-                     <div className="absolute w-28 h-28 bg-purple-600 rounded-full" style={{ bottom: '15%', left: '20%' }}></div>
-                  </div>
-
-                  {/* Card Content */}
-                  <div className="relative z-10 flex flex-col h-full">
-                    {/* Slots available Tag */}
-                    <span className="inline-block bg-pink-500 text-black text-sm font-semibold px-4 py-1 rounded-full mb-6 w-max">Slots available</span>
-                    {/* Main Heading */}
-                    <h3 className="text-white text-5xl md:text-6xl font-bold leading-tight mt-auto">Join <br/> Designjoy</h3>
-
-                    {/* Booking Link */}
-                    <div className="mt-12">
-                       <div className="text-white text-xl font-semibold">Book a 15-min intro call</div>
-                       <div className="text-gray-300 text-sm mt-1">Learn more about how DesignJoy works and how it can help you.</div>
-                       <Link href="/book-a-call" className="inline-flex items-center text-accent font-semibold mt-2">
-                          Learn More <svg className="ml-2 w-4 h-4 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                       </Link>
-                    </div>
-
-                    {/* Refer & Earn Link */}
-                     <div className="mt-6">
-                       <div className="text-white text-xl font-semibold">Refer a friend & earn</div>
-                       <div className="text-gray-300 text-sm mt-1">Earn 5% monthly recurring commissions for each referral.</div>
-                       <Link href="/refer" className="inline-flex items-center text-accent font-semibold mt-2">
-                          Learn More <svg className="ml-2 w-4 h-4 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                       </Link>
-                    </div>
-
-                  </div>
-                </div>
-
-                {/* Right Card: Monthly Club */}
-                <div className="bg-black rounded-xl p-8 border border-white/10 flex flex-col">
-                  {/* Header */}
-                  <div className="flex justify-between items-center mb-6">
-                    <h3 className="text-xl font-semibold text-white">Monthly Club</h3>
-                    <button className="text-gray-400 text-sm border border-gray-700 rounded-full px-4 py-1 hover:text-white transition-colors">Pause or cancel anytime</button>
-                  </div>
-                  <div className="border-t border-white/10 mb-6"></div>
-
-                  {/* Price */}
-                  <div className="text-white mb-6">
-                    <span className="text-5xl font-bold">$4,995</span><span className="text-xl text-gray-400">/month</span>
-                    <p className="text-gray-300 text-sm mt-1">One request at a time. Pause or cancel anytime.</p>
-                  </div>
-
-                  {/* Included Features */}
-                  <div className="mb-8">
-                    <div className="text-white text-sm font-semibold mb-3">WHAT'S INCLUDED</div>
-                    <div className="grid grid-cols-2 gap-y-3 text-gray-300 text-sm">
-                      <div>• One request at a time</div>
-                      <div>• Unlimited stock photos</div>
-                      <div>• Average 48 hour delivery</div>
-                      <div>• Unlimited users</div>
-                      <div>• Unlimited brands</div>
-                      <div>• Pause or cancel anytime</div>
-                      <div>• Webflow development</div>
-                    </div>
-                  </div>
-
-                  {/* CTA Button */}
-                  <div className="flex flex-col sm:flex-row items-center gap-4 mt-auto">
-                    <button className="flex-grow flex items-center justify-center gap-2 bg-orange-500 text-black font-bold text-lg py-3 rounded-lg hover:opacity-90 transition-opacity w-full">
-                       Get started
-                    </button>
-                    <Link href="/book-a-call" className="text-white/70 text-sm font-semibold hover:text-white transition-colors flex-shrink-0">or book a call</Link>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {membershipTab === 'Pro' && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                 {/* Left Card: Join Designjoy Pro */}
-                <div className="relative rounded-xl p-8 flex flex-col justify-between overflow-hidden" style={{ background: 'linear-gradient(to bottom right, #4a00e0, #8e2de2)' }}> {/* Placeholder gradient for Pro */}
-                   {/* Abstract shapes placeholder - Simplified representation */}
-                  <div className="absolute inset-0 opacity-30">
-                     {/* Basic circles as placeholders */}
-                     <div className="absolute w-24 h-24 bg-indigo-600 rounded-full" style={{ top: '15%', left: '10%' }}></div>
-                     <div className="absolute w-20 h-20 bg-purple-400 rounded-full" style={{ top: '25%', right: '15%' }}></div>
-                     <div className="absolute w-28 h-28 bg-violet-600 rounded-full" style={{ bottom: '20%', left: '5%' }}></div>
-                  </div>
-                  {/* Card Content */}
-                  <div className="relative z-10 flex flex-col h-full">
-                     {/* Slots available Tag */}
-                    <span className="inline-block bg-purple-500 text-black text-sm font-semibold px-4 py-1 rounded-full mb-6 w-max">Slots available</span>
-                    {/* Main Heading */}
-                    <h3 className="text-white text-5xl md:text-6xl font-bold leading-tight mt-auto">Join <br/> Designjoy Pro</h3>
-                     {/* Booking Link */}
-                    <div className="mt-12">
-                       <div className="text-white text-xl font-semibold">Book a 15-min intro call</div>
-                       <div className="text-gray-300 text-sm mt-1">Learn more about how DesignJoy works and how it can help you.</div>
-                       <Link href="/book-a-call" className="inline-flex items-center text-accent font-semibold mt-2">
-                          Learn More <svg className="ml-2 w-4 h-4 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                       </Link>
-                    </div>
-
-                    {/* Refer & Earn Link */}
-                     <div className="mt-6">
-                       <div className="text-white text-xl font-semibold">Refer a friend & earn</div>
-                       <div className="text-gray-300 text-sm mt-1">Earn 5% monthly recurring commissions for each referral.</div>
-                       <Link href="/refer" className="inline-flex items-center text-accent font-semibold mt-2">
-                          Learn More <svg className="ml-2 w-4 h-4 transform rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                       </Link>
-                    </div>
-                  </div>
-                </div>
-
-                 {/* Right Card: Pro Club */}
-                <div className="bg-black rounded-xl p-8 border border-white/10 flex flex-col">
-                  {/* Header */}
-                  <div className="flex justify-between items-center mb-6">
-                    <h3 className="text-xl font-semibold text-white">Pro Club</h3>
-                    <button className="text-gray-400 text-sm border border-gray-700 rounded-full px-4 py-1 hover:text-white transition-colors">Pause or cancel anytime</button>
-                  </div>
-                  <div className="border-t border-white/10 mb-6"></div>
-
-                  {/* Price */}
-                  <div className="text-white mb-6">
-                    <span className="text-5xl font-bold">$9,995</span><span className="text-xl text-gray-400">/month</span>
-                     <p className="text-gray-300 text-sm mt-1">Unlimited requests. Pause or cancel anytime.</p>
-                  </div>
-
-                  {/* Included Features */}
-                  <div className="mb-8">
-                    <div className="text-white text-sm font-semibold mb-3">WHAT'S INCLUDED</div>
-                    <div className="grid grid-cols-2 gap-y-3 text-gray-300 text-sm">
-                      <div>• Unlimited requests</div>
-                      <div>• Unlimited stock photos</div>
-                      <div>• Average 24 hour delivery</div>
-                      <div>• Up to 5 users</div>
-                      <div>• Unlimited brands</div>
-                      <div>• Pause or cancel anytime</div>
-                      <div>• Webflow development</div>
-                    </div>
-                  </div>
-
-                  {/* CTA Button */}
-                  <div className="flex flex-col sm:flex-row items-center gap-4 mt-auto">
-                    <button className="flex-grow flex items-center justify-center gap-2 bg-purple-500 text-black font-bold text-lg py-3 rounded-lg hover:opacity-90 transition-opacity w-full">
-                       Get started
-                    </button>
-                    <Link href="/book-a-call" className="text-white/70 text-sm font-semibold hover:text-white transition-colors flex-shrink-0">or book a call</Link>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Bottom Info Cards Container */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-              {/* Info Card 1: Pause Anytime */}
-              <div className="bg-white/[0.02] backdrop-blur-md rounded-xl p-6 border border-white/10 flex items-start gap-4">
-                 <div className="flex-shrink-0 text-accent">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0l6.003 6.003zm-7.5-6l.008-.008v.008zm0 0h.008v-.008zm0 0l-.008.008zm0 0l-.008-.008v.008zm7.5 6h-.008v.008zm0 0h.008v-.008zm0 0l-.008.008zm0 0l-.008-.008v.008zm-3.75-3.75l.008-.008v.008zm0 0h.008v-.008zm0 0l-.008.008zm0 0l-.008-.008v.008zm3.75 0l.008-.008v.008zm0 0h.008v-.008zm0 0l-.008.008zm0 0l-.008-.008v.008z"/></svg>
-                 </div>
-                 <div>
-                    <div className="font-bold text-lg text-white mb-1">Pause anytime</div>
-                    <div className="text-sm text-gray-300">Temporarily pause your subscription anytime, no sweat.</div>
-                 </div>
-              </div>
-
-              {/* Info Card 2: Try it for a week */}
-              <div className="bg-white/[0.02] backdrop-blur-md rounded-xl p-6 border border-white/10 flex items-start gap-4">
-                 <div className="flex-shrink-0 text-accent">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                 </div>
-                 <div>
-                    <div className="font-bold text-lg text-white mb-1">Try it for a week</div>
-                    <div className="text-sm text-gray-300">Not loving it after a week? Get 75% back, no questions asked.</div>
                  </div>
               </div>
             </div>

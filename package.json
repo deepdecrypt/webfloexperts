@@ -12,8 +12,6 @@
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^4.39.3",
-    "cms": "file:../cms",
-    "contentful": "^11.5.24",
     "next": "15.3.3",
     "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
