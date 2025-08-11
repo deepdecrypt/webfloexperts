@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Marquee from "react-fast-marquee";
 import ProcessSlider from "@/components/ProcessSlider";
 import { useState } from 'react';
+import CaseStudyCard from "@/components/CaseStudyCard";
+import PricingSection from "@/components/PricingSection";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('All');
@@ -22,16 +24,16 @@ export default function Home() {
               {/* Badge */}
               <span className="inline-block bg-black/80 text-white px-4 sm:px-8 py-1.5 rounded-full text-sm sm:text-lg font-normal shadow-md mb-4 sm:mb-8 pointer-events-auto" style={{ border: '1.5px solid #232326' }}>
                 Skip Dev Team. Save Time. Drive Results.
-            </span>
+              </span>
               {/* Heading */}
               <h1 className="text-4xl md:text-7xl font-medium leading-tight text-white mb-4 pointer-events-auto" style={{ lineHeight: 1.1 }}>
                 Launch Your MVP<br />
                 <span className="bg-gradient-to-b from-white to-[#7fdaff] text-transparent bg-clip-text">&amp; Website 10x Faster</span>
-            </h1>
-            {/* Subheading */}
+              </h1>
+              {/* Subheading */}
               <p className="text-lg md:text-2xl mb-10 max-w-2xl mx-auto text-white/80 pointer-events-auto">
                 We move the needle with websites that drive sales, MVPs that hit product–market fit, and automation that scales your business.
-            </p>
+              </p>
               {/* CTA Button */}
               <a
                 href="/pricing"
@@ -76,12 +78,12 @@ export default function Home() {
         {/* Client Logos/Trust Bar Section */}
         <section className="py-12 bg-black border-y border-white/10 overflow-hidden">
           <div className="container mx-auto px-4">
-             <div className="flex justify-center items-center mb-8 w-full">
-               <span className="text-gray-500 text-sm uppercase tracking-widest font-semibold w-full text-center">Trusted by Brands Worldwide</span>
-             </div>
+            <div className="flex justify-center items-center mb-8 w-full">
+              <span className="text-gray-500 text-sm uppercase tracking-widest font-semibold w-full text-center">Trusted by Brands Worldwide</span>
+            </div>
             {/* Logos - Horizontal Auto-Scroll using react-fast-marquee */}
-            <Marquee 
-              gradient={false} 
+            <Marquee
+              gradient={false}
               speed={40}
               direction="left"
               pauseOnHover={true}
@@ -146,10 +148,10 @@ export default function Home() {
               <div className="bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] flex flex-col md:col-span-2 lg:col-span-3 overflow-hidden">
                 <img src="/services/MM Flowbase.png" alt="B2B Web Design" className="w-full h-40 object-cover rounded-t-xl" />
                 <div className="flex flex-col h-full p-6">
-                <h3 className="text-lg font-semibold text-white mb-2">Websites, CMS & eCom</h3>
-                <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
-                A premium website isn’t optional. It’s how you earn trust and drive conversions.
-                </p>
+                  <h3 className="text-lg font-semibold text-white mb-2">Websites, CMS & eCom</h3>
+                  <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
+                    A premium website isn’t optional. It’s how you earn trust and drive conversions.
+                  </p>
                 </div>
               </div>
 
@@ -157,10 +159,10 @@ export default function Home() {
               <div className="bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] flex flex-col md:col-span-2 lg:col-span-3 overflow-hidden">
                 <img src="/services/MM Flowbase 2.png" alt="Webflow Development" className="w-full h-40 object-cover rounded-t-xl" />
                 <div className="flex flex-col h-full p-6">
-                <h3 className="text-lg font-semibold text-white mb-2">MVP Development</h3>
-                <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
-                The right MVP saves time and money. Low-code helps you build, test, and improve faster.
-                </p>
+                  <h3 className="text-lg font-semibold text-white mb-2">MVP Development</h3>
+                  <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
+                    The right MVP saves time and money. Low-code helps you build, test, and improve faster.
+                  </p>
                 </div>
               </div>
 
@@ -168,10 +170,10 @@ export default function Home() {
               <div className="bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] flex flex-col lg:col-span-2 overflow-hidden">
                 <img src="/services/MM Flowbase 3.png" alt="Ongoing Support" className="w-full h-40 object-cover rounded-t-xl" />
                 <div className="flex flex-col h-full p-6">
-                <h3 className="text-lg font-semibold text-white mb-2">SEO, CRO & Organic Growth</h3>
-                <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
-                Without traffic, your website’s just a brochure. SEO turns visits into revenue.
-                </p>
+                  <h3 className="text-lg font-semibold text-white mb-2">SEO, CRO & Organic Growth</h3>
+                  <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
+                    Without traffic, your website’s just a brochure. SEO turns visits into revenue.
+                  </p>
                 </div>
               </div>
 
@@ -179,10 +181,10 @@ export default function Home() {
               <div className="bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] flex flex-col lg:col-span-2 overflow-hidden">
                 <img src="/services/MM Flowbase 4.png" alt="Website Strategy" className="w-full h-40 object-cover rounded-t-xl" />
                 <div className="flex flex-col h-full p-6">
-                <h3 className="text-lg font-semibold text-white mb-2">AI & Workflow Automation</h3>
-                <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
-                Automation triples your output from lead follow-ups to order tracking, and scale like never before.
-                </p>
+                  <h3 className="text-lg font-semibold text-white mb-2">AI & Workflow Automation</h3>
+                  <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
+                    Automation triples your output from lead follow-ups to order tracking, and scale like never before.
+                  </p>
                 </div>
               </div>
 
@@ -190,10 +192,10 @@ export default function Home() {
               <div className="bg-white/[0.02] backdrop-blur-md rounded-xl border border-white/[0.08] flex flex-col lg:col-span-2 overflow-hidden">
                 <img src="/services/MM Flowbase (1).png" alt="Website Migration" className="w-full h-40 object-cover rounded-t-xl" />
                 <div className="flex flex-col h-full p-6">
-                <h3 className="text-lg font-semibold text-white mb-2">Extend & Integrate</h3>
-                <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
-                Extend your stack with custom integrations, APIs, and backend logic.
-                </p>
+                  <h3 className="text-lg font-semibold text-white mb-2">Extend & Integrate</h3>
+                  <p className="text-white/70 text-xs md:text-base leading-relaxed flex-grow font-normal">
+                    Extend your stack with custom integrations, APIs, and backend logic.
+                  </p>
                 </div>
               </div>
             </div>
@@ -217,7 +219,7 @@ export default function Home() {
                     // Lightning Bolt Icon (Launch in Weeks)
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13 2L3 14h7v8l10-12h-7V2z" />
-</svg>
+                    </svg>
                   ),
                   title: 'Launch in Weeks, Not Months',
                   description: 'Fast, marketing-ready websites so you avoid endless dev sprints.',
@@ -258,9 +260,9 @@ export default function Home() {
                   icon: (
                     // Target Icon (Conversion-Driven Design)
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-white">
-                      <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5"/>
-                      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5"/>
-                      <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                      <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5" />
+                      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.5" />
+                      <circle cx="12" cy="12" r="1" fill="currentColor" />
                     </svg>
                   ),
                   title: 'Conversion-Driven Design',
@@ -270,9 +272,9 @@ export default function Home() {
                   icon: (
                     // Bar Chart Icon (Data-Backed Decisions)
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-white">
-                      <rect x="4" y="10" width="3" height="7" rx="1" stroke="currentColor" strokeWidth="1.5"/>
-                      <rect x="10.5" y="6" width="3" height="11" rx="1" stroke="currentColor" strokeWidth="1.5"/>
-                      <rect x="17" y="13" width="3" height="4" rx="1" stroke="currentColor" strokeWidth="1.5"/>
+                      <rect x="4" y="10" width="3" height="7" rx="1" stroke="currentColor" strokeWidth="1.5" />
+                      <rect x="10.5" y="6" width="3" height="11" rx="1" stroke="currentColor" strokeWidth="1.5" />
+                      <rect x="17" y="13" width="3" height="4" rx="1" stroke="currentColor" strokeWidth="1.5" />
                     </svg>
                   ),
                   title: 'Data-Backed Decisions',
@@ -282,7 +284,7 @@ export default function Home() {
                   icon: (
                     // Chip/Circuit Icon (AI-Powered Pipeline)
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
-                      <rect x="7" y="7" width="10" height="10" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+                      <rect x="7" y="7" width="10" height="10" rx="2" stroke="currentColor" strokeWidth="1.5" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4 9V7a3 3 0 013-3h2M20 9V7a3 3 0 00-3-3h-2M4 15v2a3 3 0 003 3h2m10-5v2a3 3 0 01-3 3h-2" />
                     </svg>
                   ),
@@ -293,7 +295,7 @@ export default function Home() {
                   icon: (
                     // Lock Icon (Secure by Default)
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 text-white">
-                      <rect x="6" y="10" width="12" height="8" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+                      <rect x="6" y="10" width="12" height="8" rx="2" stroke="currentColor" strokeWidth="1.5" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 10V7a3 3 0 016 0v3" />
                     </svg>
                   ),
@@ -315,7 +317,7 @@ export default function Home() {
                   <div className="flex items-center gap-x-3 mb-3">
                     {item.icon}
                     <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-</div>
+                  </div>
                   <p className="text-white/70 text-sm leading-relaxed">{item.description}</p>
                 </div>
               ))}
@@ -324,7 +326,7 @@ export default function Home() {
         </section>
 
         {/* Duplicated Services Section (after What Makes Us Stand Out) */}
-        <section className="py-20 bg-black text-white">
+        <section className="py-20 bg-black text-white" id="our-works">
           {/* Reduced overall width with max-w-screen-lg */}
           <div className="container mx-auto px-4 max-w-screen-lg">
             <div className="text-center mb-12">
@@ -361,63 +363,81 @@ export default function Home() {
                         className="max-w-full max-h-80 object-contain"
                         style={{ display: 'block' }}
                       />
-                </div>
-                <div className="p-6 pt-6 flex flex-col flex-grow">
+                    </div>
+                    <div className="p-6 pt-6 flex flex-col flex-grow">
                       {/* Label */}
                       <span className="inline-block py-1 text-xs font-semibold rounded uppercase" style={{ color: '#69D4FF' }}>FEATURED WORK</span>
-                  {/* Title */}
+                      {/* Title */}
                       <h3 className="text-lg font-semibold text-white mt-1">{title}</h3>
-                  {/* Description */}
+                      {/* Description */}
                       <p className="text-gray-300 text-sm mt-2 leading-relaxed flex-grow">This is a featured project image. Replace this with a real description if desired.</p>
                       {/* Arrow Link */}
-                   <Link
-                     href="#"
-                     className="md:absolute md:bottom-6 md:right-6 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center border border-white/20 backdrop-blur-md hover:bg-white/20 transition-colors group transform transition-transform duration-200 ease-in-out hover:translate-x-1 hover:-translate-y-1 mt-4 md:mt-0 self-end"
-                   >
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white group-hover:text-accent transition-colors">
-                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                     </svg>
-                   </Link>
-                </div>
-              </div>
-                );
-              })}
-              {/* Full-width card at the end */}
-              <div
-                className="relative rounded-xl border border-white/[0.08] flex flex-col col-span-1 md:col-span-2 p-8 text-white"
-                style={{ background: 'linear-gradient(to bottom,rgb(5, 56, 85),rgba(0, 25, 32, 0.4))' }}
-              >
-                <h3 className="text-2xl font-bold mb-2">diiy</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-0 border-b-0">
-              {[ 'Hubspot', 'Salesforce', 'Zapier', 'Google Analytics', 'Mixpanel', 'Segment', 'Mailchimp', 'Pardot', 'ActiveCampaign', 'Shopify', 'Greenhouse', 'Marketo' ].map((name, index) => {
-                const isLastColumnSm = (index + 1) % 2 === 0;
-                const isLastColumnMd = (index + 1) % 3 === 0;
-                const isLastColumnLg = (index + 1) % 4 === 0;
-                const isLastColumnXl = (index + 1) % 4 === 0;
-
-                return (
-                  <div key={name} className={`bg-white/[0.02] rounded-none p-4 flex flex-col items-center justify-center text-gray-300 border border-white/10 relative overflow-hidden`}>
-                    <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
-                    <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
-                      {name !== 'And more' ? (
-                        <div className="w-12 h-12 mb-3 flex items-center justify-center text-gray-500">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4ZM12 6C9.79086 6 8 7.79086 8 10H10C10 8.89543 10.8954 8 12 8C13.1046 8 14 8.89543 14 10C14 11.1046 12.8954 12 11.7908 12H10V14H11.7908C14.5523 14 16 12.2091 16 10C16 7.79086 14.2091 6 12 6Z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                      ) : (
-                        <div className="w-10 h-10 mb-2 flex items-center justify-center text-gray-500 text-2xl font-bold">
-                          ...
-                        </div>
-                      )}
-                      <span className="text-base font-semibold text-white">{name}</span>
+                      <Link
+                        href="#"
+                        className="md:absolute md:bottom-6 md:right-6 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center border border-white/20 backdrop-blur-md hover:bg-white/20 transition-colors group transform transition-transform duration-200 ease-in-out hover:translate-x-1 hover:-translate-y-1 mt-4 md:mt-0 self-end"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-white group-hover:text-accent transition-colors">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                        </svg>
+                      </Link>
                     </div>
                   </div>
                 );
               })}
+              {/* Full-width card at the end */}
+
             </div>
-              </div>
-            </div>
+          </div>
+        </section>
+
+        {/* Vertical Case Studies - stacked cards */}
+        <section className="py-16 bg-black text-white">
+          <div className="container mx-auto px-4 max-w-screen-xl space-y-12">
+            {[
+              {
+                category: 'TRANSPORTATION & LOGISTICS',
+                country: '🇫🇷',
+                title: 'Linkbycar raised €1.4M in funding and strengthened its market position',
+                quote: 'Halo Lab has a very diverse range of skills and always finds a solution to exposed issues. They delivered the project on time and with respect to schedule.',
+                personName: 'Saidou Soumare',
+                personRole: 'CTO at Linkbycar',
+                avatarUrl: 'https://randomuser.me/api/portraits/men/71.jpg',
+                imageSrc: '/work/Frame 427321905.png',
+              },
+              {
+                category: 'HEALTHCARE',
+                country: '🇺🇸',
+                title: 'Chawellness website redesign led to 23% organic traffic growth',
+                quote: 'They kept the momentum high and executed with care. The improved UX directly impacted conversions.',
+                personName: 'Mira Patel',
+                personRole: 'Marketing Lead',
+                avatarUrl: 'https://randomuser.me/api/portraits/women/68.jpg',
+                imageSrc: '/work/image 92.png',
+              },
+              {
+                category: 'EDTECH',
+                country: '🇬🇧',
+                title: 'MentorMatch onboarding simplification improved activation by 1.5×',
+                quote: 'From research to production, the team handled everything seamlessly and shipped fast.',
+                personName: 'John Davis',
+                personRole: 'Product Manager',
+                avatarUrl: 'https://randomuser.me/api/portraits/men/33.jpg',
+                imageSrc: '/work/image 90.png',
+              },
+            ].map((item, index) => (
+              <CaseStudyCard
+                key={item.title}
+                category={item.category}
+                country={item.country}
+                title={item.title}
+                quote={item.quote}
+                personName={item.personName}
+                personRole={item.personRole}
+                avatarUrl={item.avatarUrl}
+                imageSrc={item.imageSrc}
+                reverse={index % 2 === 1}
+              />
+            ))}
           </div>
         </section>
 
@@ -425,9 +445,10 @@ export default function Home() {
         <section className="py-12 bg-black text-white overflow-hidden">
           <div className="container mx-auto px-4 text-center">
             <div className="text-center mb-12">
-              <span className="text-accent text-sm uppercase tracking-widest font-semibold">+ Client Success</span>
-              <h2 className="text-4xl md:text-5xl font-extrabold mt-2 leading-tight">
-                We get nothing but love from our partners. And for a reason.
+              <span className="text-xs font-semibold uppercase tracking-widest mb-3 block" style={{ color: '#69D4FF' }}>+ CLIENT SUCCESS</span>
+              <h2 className="text-lg md:text-4xl font-medium text-white mb-4 leading-tight max-w-[95vw] md:max-w-none mx-auto">
+                We get nothing but love from our partners.<br />
+                And for a reason.
               </h2>
             </div>
           </div>
@@ -436,97 +457,114 @@ export default function Home() {
           {/* Implemented grid for two rows with consistent card sizes */}
           {/* Limited overall width and centered the grid, ensured subtle rounded corners on cards */}
           <div className="px-4 max-w-screen-lg mx-auto">
-            {/* Using a standard 3-column grid on large screens for uniform card widths */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-              {/* Card 1: Stat - 20% */}
-              {/* Removed specific col-span for uniform size */}
-              <div className="relative h-56 bg-white/[0.02] backdrop-blur-md px-6 pt-6 pb-4 border border-white/[0.08] flex flex-col justify-between overflow-hidden rounded-md">
-                 {/* Gradient Overlay Effect */}
-                <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
-                <div className="relative z-10">
-                  <h3 className="text-5xl font-bold text-accent">20%</h3>
-                  <p className="text-gray-400 text-sm mt-2">organic traffic increase</p>
-                </div>
-              </div>
+    {/* Card 1: Stat – 23% */}
+    <div className="relative h-56 overflow-hidden rounded-md border border-white/[0.08] bg-black">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0d1f2d] to-[#000000] opacity-80 pointer-events-none" />
+      <div className="relative z-10 flex flex-col items-start px-8 pt-8">
+        <h3 className="text-6xl font-extrabold text-[#7FDAFF] leading-none mb-2">23%</h3>
+        <p className="text-base text-white/75">Organic Traffic Increase</p>
+      </div>
+    </div>
 
-              {/* Card 2: Testimonial - Mengütian Üniver */}
-              {/* Removed specific col-span for uniform size */}
-              <div className="relative h-56 bg-white/[0.02] backdrop-blur-md px-6 pt-6 pb-4 border border-white/[0.08] flex flex-col justify-between overflow-hidden rounded-md">
-                 {/* Gradient Overlay Effect */}
-                <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
-                 <div className="relative z-10">
-                  <div className="flex items-center mb-4">
-                    {/* Placeholder for Profile Icon */}
-                    <div className="w-8 h-8 bg-gray-600 rounded-full mr-3"></div>
-                    <span className="font-semibold text-sm">Mengütian Üniver</span>
-                  </div>
-                  <p className="text-gray-300 text-sm italic leading-relaxed">
-                    What I found best was the willingness of all Flow Ninja's employees to go the extra mile.
-                  </p>
-                </div>
-              </div>
+    {/* Card 2: Testimonial – John Davis */}
+    <div className="relative h-56 bg-white/[0.02] backdrop-blur-md px-6 pt-6 pb-4 border border-white/[0.08] flex flex-col justify-between overflow-hidden rounded-md">
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom right, rgba(105,212,255,0.05), rgba(63,127,153,0.05))',
+          mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)',
+          WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)'
+        }}
+      />
+      <div className="relative z-10">
+        <div className="flex items-center mb-4">
+          <img
+            src="https://randomuser.me/api/portraits/men/10.jpg"
+            alt="John Davis"
+            className="w-8 h-8 rounded-full mr-3"
+          />
+          <span className="font-semibold text-sm">John Davis</span>
+        </div>
+        <p className="text-gray-300 text-sm italic leading-relaxed">
+        Webfloexperts got us to page one for three competitive keywords in under two months. Their SEO delivers results.
+        </p>
+      </div>
+    </div>
 
-               {/* Card 3: Stat - 8h */}
-               {/* Removed specific col-span for uniform size */}
-              <div className="relative h-56 bg-white/[0.02] backdrop-blur-md px-6 pt-6 pb-4 border border-white/[0.08] flex flex-col justify-between overflow-hidden rounded-md">
-                 {/* Gradient Overlay Effect */}
-                <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
-                <div className="relative z-10">
-                  <h3 className="text-5xl font-bold text-accent">8h</h3>
-                  <p className="text-gray-400 text-sm mt-2">well deserved sleep</p>
-                </div>
-              </div>
+    {/* Card 3: Stat – 1.75x */}
+    <div className="relative h-56 overflow-hidden rounded-md border border-white/[0.08] bg-black">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0d1f2d] to-[#000000] opacity-80 pointer-events-none" />
+      <div className="relative z-10 flex flex-col items-start px-8 pt-8">
+        <h3 className="text-6xl font-extrabold text-[#7FDAFF] leading-none mb-2">1.5×</h3>
+        <p className="text-base text-white/75">Increase in Lead Submission</p>
+      </div>
+    </div>
 
-              {/* Card 4: Testimonial - Andela Rasovic */}
-               <div className="relative h-56 bg-white/[0.02] backdrop-blur-md px-6 pt-6 pb-4 border border-white/[0.08] flex flex-col justify-between overflow-hidden rounded-md">
-                 {/* Gradient Overlay Effect */}
-                <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
-                 <div className="relative z-10">
-                  <div className="flex items-center mb-4">
-                    {/* Placeholder for Profile Icon */}
-                    <div className="w-8 h-8 bg-gray-600 rounded-full mr-3"></div>
-                    <span className="font-semibold text-sm">Andela Rasovic</span>
-                  </div>
-                  <p className="text-gray-300 text-sm italic leading-relaxed">
-                    The quality was never compromised within the tight time frame. Very flexible to our last-minute changes and very friendly in the communication.
-                  </p>
-                </div>
-              </div>
+    {/* Card 4: Testimonial – Michael Chen */}
+    <div className="relative h-56 bg-white/[0.02] backdrop-blur-md px-6 pt-6 pb-4 border border-white/[0.08] flex flex-col justify-between overflow-hidden rounded-md">
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom right, rgba(105,212,255,0.05), rgba(63,127,153,0.05))',
+          mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)',
+          WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)'
+        }}
+      />
+      <div className="relative z-10">
+        <div className="flex items-center mb-4">
+          <img
+            src="https://randomuser.me/api/portraits/men/20.jpg"
+            alt="Michael Chen"
+            className="w-8 h-8 rounded-full mr-3"
+          />
+          <span className="font-semibold text-sm">Michael Chen</span>
+        </div>
+        <p className="text-gray-300 text-sm italic leading-relaxed">
+        From Shopify storefront to automation and dashboard setup, Webfloexperts handled everything seamlessly. Super responsive and truly reliable.
+        </p>
+      </div>
+    </div>
 
-              {/* Card 5: Stat - 10x */}
-              {/* Removed specific col-span for uniform size */}
-              <div className="relative h-56 bg-white/[0.02] backdrop-blur-md px-6 pt-6 pb-4 border border-white/[0.08] flex flex-col justify-between overflow-hidden rounded-md">
-                 {/* Gradient Overlay Effect */}
-                <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
-                <div className="relative z-10">
-                  <h3 className="text-5xl font-bold text-accent">10x</h3>
-                  <p className="text-gray-400 text-sm mt-2">faster website changes</p>
-                </div>
-              </div>
+    {/* Card 5: Stat – 10× */}
+    <div className="relative h-56 overflow-hidden rounded-md border border-white/[0.08] bg-black">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0d1f2d] to-[#000000] opacity-80 pointer-events-none" />
+      <div className="relative z-10 flex flex-col items-start px-8 pt-8">
+        <h3 className="text-6xl font-extrabold text-[#7FDAFF] leading-none mb-2">10×</h3>
+        <p className="text-base text-white/75">Faster Website Deployments</p>
+      </div>
+    </div>
 
-               {/* Card 6: Testimonial - Robert McCauley */}
-               {/* Removed specific col-span for uniform size */}
-               <div className="relative h-56 bg-white/[0.02] backdrop-blur-md px-6 pt-6 pb-4 border border-white/[0.08] flex flex-col justify-between overflow-hidden rounded-md">
-                 {/* Gradient Overlay Effect */}
-                <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
-                 <div className="relative z-10">
-                  <div className="flex items-center mb-4">
-                    {/* Placeholder for Profile Icon */}
-                    <div className="w-8 h-8 bg-gray-600 rounded-full mr-3"></div>
-                    <span className="font-semibold text-sm">Robert McCauley</span>
-                  </div>
-                  <p className="text-gray-300 text-sm italic leading-relaxed">
-                    Thanks to their expertise and guidance, we're able to create and modify pages quickly, test new features, and improve our content.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-          </div>
+    {/* Card 6: Testimonial – David Smith */}
+    <div className="relative h-56 bg-white/[0.02] backdrop-blur-md px-6 pt-6 pb-4 border border-white/[0.08] flex flex-col justify-between overflow-hidden rounded-md">
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom right, rgba(105,212,255,0.05), rgba(63,127,153,0.05))',
+          mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)',
+          WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)'
+        }}
+      />
+      <div className="relative z-10">
+        <div className="flex items-center mb-4">
+          <img
+            src="https://randomuser.me/api/portraits/men/30.jpg"
+            alt="David Smith"
+            className="w-8 h-8 rounded-full mr-3"
+          />
+          <span className="font-semibold text-sm">David Smith</span>
+        </div>
+        <p className="text-gray-300 text-sm italic leading-relaxed">
+        Their growth-first mindset helped us move from MVP to scalable product without a full dev team. Highly recommend.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
         </section>
 
-       
+
 
         {/* Our Process Section */}
         <section className="py-20 bg-black text-white">
@@ -542,13 +580,16 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Membership Pricing */}
+        <PricingSection />
+
         {/* Integrations Section */}
         <section className="py-20 bg-black text-white">
           <div className="container mx-auto px-4 max-w-screen-lg">
             {/* Top Section: Heading and Tabs */}
             <div className="text-center mb-12">
               <span className="text-accent text-sm uppercase tracking-widest font-semibold mb-4 flex items-center justify-center gap-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-accent"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-accent"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" /></svg>
                 Why Integrate?
               </span>
               <h2 className="text-4xl md:text-5xl font-extrabold mt-2 leading-tight text-center">
@@ -573,7 +614,7 @@ export default function Home() {
 
             {/* Bottom Section: Logo Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-0 border-b-0">
-              {[ 'Hubspot', 'Salesforce', 'Zapier', 'Google Analytics', 'Mixpanel', 'Segment', 'Mailchimp', 'Pardot', 'ActiveCampaign', 'Shopify', 'Greenhouse', 'Marketo' ].map((name, index) => {
+              {['Hubspot', 'Salesforce', 'Zapier', 'Google Analytics', 'Mixpanel', 'Segment', 'Mailchimp', 'Pardot', 'ActiveCampaign', 'Shopify', 'Greenhouse', 'Marketo'].map((name, index) => {
                 const isLastColumnSm = (index + 1) % 2 === 0;
                 const isLastColumnMd = (index + 1) % 3 === 0;
                 const isLastColumnLg = (index + 1) % 4 === 0;
@@ -585,9 +626,9 @@ export default function Home() {
                     <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
                       {name !== 'And more' ? (
                         <div className="w-12 h-12 mb-3 flex items-center justify-center text-gray-500">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4ZM12 6C9.79086 6 8 7.79086 8 10H10C10 8.89543 10.8954 8 12 8C13.1046 8 14 8.89543 14 10C14 11.1046 12.8954 12 11.7908 12H10V14H11.7908C14.5523 14 16 12.2091 16 10C16 7.79086 14.2091 6 12 6Z" fill="currentColor"/>
-                            </svg>
+                          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4C16.4183 4 20 7.58172 20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4ZM12 6C9.79086 6 8 7.79086 8 10H10C10 8.89543 10.8954 8 12 8C13.1046 8 14 8.89543 14 10C14 11.1046 12.8954 12 11.7908 12H10V14H11.7908C14.5523 14 16 12.2091 16 10C16 7.79086 14.2091 6 12 6Z" fill="currentColor" />
+                          </svg>
                         </div>
                       ) : (
                         <div className="w-10 h-10 mb-2 flex items-center justify-center text-gray-500 text-2xl font-bold">
@@ -603,83 +644,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Why Amply Section */}
-        <section className="py-20 bg-black text-white">
-          <div className="container mx-auto px-4 max-w-screen-lg">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-              {/* Left Column: Heading and Description */}
-              <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                {/* Tag */}
-                <span className="text-accent text-sm uppercase tracking-widest font-semibold mb-4 flex items-center gap-2">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-accent"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
-                  Why Amply for Webflow
-                </span>
-                {/* Heading */}
-                <h2 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                  Accelerating <br className="hidden md:block"/> B2B growth
-                </h2>
-                {/* Description */}
-                <p className="text-lg md:text-xl text-gray-300 max-w-md">
-                  Amply is a certified Webflow agency with over 100 successful projects, helping B2B brands accelerate growth through high-performance, scalable Webflow websites.
-                </p>
-              </div>
 
-              {/* Right Column: Points List */}
-              <div className="flex flex-col space-y-8">
-                {/* Point 1: Webflow Experts for B2B */}
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 mt-1 text-accent">
-                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M15.96 11.153l-3.484 3.484a3 3 0 11-4.243-4.243l3.484-3.484M16.5 10.5l-3 3m3-3l3 3"/></svg>
-                  </div>
-                  <div>
-                    <div className="font-bold text-lg text-white">Webflow Experts for B2B</div>
-                    <div className="text-sm text-gray-300">We combine technical Webflow expertise with industry knowledge to drive growth for B2B.</div>
-                  </div>
-                </div>
-                {/* Point 2: Marketing Integrations */}
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 mt-1 text-accent">
-                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
-                  </div>
-                  <div>
-                    <div className="font-bold text-lg text-white">Marketing Integrations</div>
-                    <div className="text-sm text-gray-300">Connect your marketing tools with Webflow to optimize performance and streamline workflows.</div>
-                  </div>
-                </div>
-                {/* Point 3: SEO Optimized */}
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 mt-1 text-accent">
-                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M12 18V6m0 0l-3 3m3-3l3 3"/></svg>
-                  </div>
-                  <div>
-                    <div className="font-bold text-lg text-white">SEO Optimized</div>
-                    <div className="text-sm text-gray-300">Ensure your website is SEO-optimized with Webflow for better performance and visibility.</div>
-                  </div>
-                </div>
-                {/* Point 4: Easy to scale */}
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 mt-1 text-accent">
-                    <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M7 12l5 5 5-5M12 7v10"/></svg>
-                  </div>
-                  <div>
-                    <div className="font-bold text-lg text-white">Easy to scale</div>
-                    <div className="text-sm text-gray-300">Empower your marketing team with a website that is easy to scale, adapting as your business grows.</div>
-                  </div>
-                </div>
-                {/* Point 5: Website Migration */}
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 mt-1 text-accent">
-                     <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M4 16v-3m0 0V8m0 5l4 4m-4-4l-4 4m8-12v3m0 0v5m0-5l4-4m-4 4l-4-4m8 8v3m0 0v5m0-5l4 4m-4-4l-4 4M12 12v9m0-9l3-3m-3 3l-3-3"/></svg>
-                  </div>
-                  <div>
-                    <div className="font-bold text-lg text-white">Website Migration</div>
-                    <div className="text-sm text-gray-300">Transition to Webflow with our industry-leading migration process to ensure a smooth migration.</div>
-                  </div>
-                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* FAQ Section */}
         <section className="py-20 bg-black text-white">
