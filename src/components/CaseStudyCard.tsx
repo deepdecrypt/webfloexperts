@@ -26,10 +26,7 @@ export default function CaseStudyCard({
   reverse = false,
 }: CaseStudyCardProps) {
   return (
-    <article className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-md">
-      {/* teal diagonal background accent */}
-      <div className="pointer-events-none absolute right-[-15%] top-[-20%] h-[160%] w-[55%] rotate-[-8deg] rounded-[48px]" style={{ background: 'radial-gradient(120% 100% at 30% 50%, rgba(105,212,255,0.18) 0%, rgba(0,0,0,0) 70%)' }} />
-
+    <article className="relative overflow-hidden rounded-2xl border border-white/8 bg-white/[0.05]">
       <div className={`relative z-10 flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-stretch`}>
         {/* Text */}
         <div className="flex-1 p-6 sm:p-10 lg:p-14">
@@ -51,7 +48,7 @@ export default function CaseStudyCard({
           </div>
 
           {quote ? (
-            <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8">“{quote}”</p>
+            <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8">"{quote}"</p>
           ) : null}
 
           {(personName || personRole) && (
@@ -71,11 +68,9 @@ export default function CaseStudyCard({
 
         {/* Visual */}
         <div className="relative flex-1 min-h-[260px] sm:min-h-[320px] lg:min-h-[420px]">
-          {/* angled background panel */}
-          <div className="absolute inset-6 sm:inset-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent" />
-          <div className="absolute inset-6 sm:inset-8 rounded-2xl overflow-hidden flex items-center justify-center">
+          <div className="absolute inset-6 sm:inset-8 rounded-xl overflow-hidden flex items-center justify-center">
             {/* Use native img for local assets to avoid layout shift issues with fill */}
-            <img src={imageSrc} alt={imageAlt} className="max-h-full max-w-full object-contain" />
+            <img src={imageSrc} alt={imageAlt} className="max-h-full max-w-full object-contain rounded-lg" />
           </div>
         </div>
       </div>

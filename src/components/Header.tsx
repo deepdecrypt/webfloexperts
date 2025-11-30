@@ -34,7 +34,7 @@ const Header = () => {
         {/* Book a Call Button - glassy effect */}
         <div className="hidden lg:block">
           <Link
-            href="/book-a-call"
+            href="https://calendly.com/webfloexperts/30min"
             className="ml-2 px-4 sm:px-5 py-1.5 rounded-lg text-xs sm:text-base text-white border bg-[rgba(0,182,255,0.16)]"
             style={{
               borderColor: 'rgba(255,255,255,0.15)',
@@ -76,17 +76,17 @@ const Header = () => {
             <li><Link href="#pricing" className="hover:text-white block w-full" onClick={() => setMenuOpen(false)}>Pricing</Link></li>
           </ul>
           <div className="px-6 w-full">
-          <Link
-            href="/book-a-call"
+            <Link
+              href="https://calendly.com/webfloexperts/30min"
               className="w-full block px-6 py-3 rounded-xl text-base text-white border bg-[rgba(0,182,255,0.16)] text-center"
-            style={{
+              style={{
                 borderColor: 'rgba(255,255,255,0.15)',
                 boxShadow: 'inset 0 0 6px 3px rgba(255,255,255,0.25), 0 0 0 2px #18181b, 0 2px 8px 0 rgba(0,0,0,0.25)'
-            }}
-            onClick={() => setMenuOpen(false)}
-          >
+              }}
+              onClick={() => setMenuOpen(false)}
+            >
               Book a Call
-          </Link>
+            </Link>
           </div>
         </div>
       )}

@@ -1,119 +1,115 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 
-const steps = [
+const categories = [
   {
-    label: "Research",
-    title: "We research your market.",
-    desc: "Our team dives deep into your industry to uncover the best opportunities for your business.",
-    img: "/process-research.svg",
-    step: "Step 01",
-    bg: "bg-blue-50"
+    label: "D2C",
+    logos: [
+      "https://upload.wikimedia.org/wikipedia/commons/9/95/Nykaa_logo.png",
+      "https://upload.wikimedia.org/wikipedia/commons/7/77/Flipkart_logo.png",
+      "https://upload.wikimedia.org/wikipedia/commons/5/53/Fila_logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/The_Souled_Store_logo.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/86/Bewakoof_logo.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8e/Snapdeal_Logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f1/Dream11_logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/fc/Godrej_Logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/6/67/Cityflo_logo.png",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a5/Plum_logo.png",
+    ],
   },
   {
-    label: "Plan",
-    title: "We map out content that ranks.",
-    desc: "Our proprietary AI platform scrapes millions of top-ranking pages, and creates outlines that match exactly what your audience is searching for.",
-    img: "/process-plan.svg",
-    step: "Step 02",
-    bg: "bg-blue-100"
+    label: "Tech",
+    logos: [
+      "/Tech_logo/Frame 427321912.png",
+      "/Tech_logo/6 5.png",
+      "/Tech_logo/1 441.png",
+      "/Tech_logo/2 7002.png",
+      "/Tech_logo/3 8.png",
+      "/Tech_logo/4 1.png",
+      "/Tech_logo/5 7.png",
+      "/Tech_logo/7 7.png",
+      "/Tech_logo/8 10.png",
+      "/Tech_logo/9 7.png",
+      "/Tech_logo/10 1.png",
+      "/Tech_logo/11 1.png",
+      "/Tech_logo/12 1.png",
+      "/Tech_logo/13 1.png",
+      "/Tech_logo/14 41.png",
+      "/Tech_logo/15 1.png",
+      "/Tech_logo/16 1.png",
+      "/Tech_logo/17 1.png",
+      "/Tech_logo/18 1.png",
+      "/Tech_logo/19 1.png",
+      "/Tech_logo/20 1.png",
+      "/Tech_logo/21 1.png",
+      "/Tech_logo/22 1.png",
+      "/Tech_logo/23 1.png",
+      "/Tech_logo/24 1.png",
+      "/Tech_logo/25 1.png",
+      "/Tech_logo/26 1.png",
+      "/Tech_logo/27 2.png",
+      "/Tech_logo/28 1.png",
+      "/Tech_logo/29 1.png",
+      "/Tech_logo/30 1.png",
+      "/Tech_logo/31 1.png",
+      "/Tech_logo/32 2.png",
+      "/Tech_logo/33 1.png",
+      "/Tech_logo/34 1.png",
+      "/Tech_logo/35 1.png",
+      "/Tech_logo/36 1.png",
+      "/Tech_logo/37 1.png",
+
+    ],
   },
   {
-    label: "Create",
-    title: "We create high-quality content.",
-    desc: "Our expert writers and designers craft engaging, SEO-optimized content tailored to your brand.",
-    img: "/process-create.svg",
-    step: "Step 03",
-    bg: "bg-blue-50"
+    label: "SaaS",
+    logos: [
+      "https://upload.wikimedia.org/wikipedia/commons/0/0b/Shopify_logo_2018.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/ab/Meta-Logo.png",
+      "https://upload.wikimedia.org/wikipedia/commons/3/33/Tesla_Motors.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/3f/Slack_icon_2019.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/4/45/HubSpot_Logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f9/Mailchimp_Logo.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/33/Airtable_Logo.png",
+      "https://upload.wikimedia.org/wikipedia/commons/0/04/Notion_app_logo.png",
+      "https://upload.wikimedia.org/wikipedia/commons/3/32/Webflow_logo_2023.svg",
+    ],
   },
-  {
-    label: "Publish",
-    title: "We publish and optimize.",
-    desc: "Content is published on your site with technical SEO best practices for maximum visibility.",
-    img: "/process-publish.svg",
-    step: "Step 04",
-    bg: "bg-blue-100"
-  },
-  {
-    label: "Analyze",
-    title: "We analyze performance.",
-    desc: "We track results and provide actionable insights to continually improve your content strategy.",
-    img: "/process-analyze.svg",
-    step: "Step 05",
-    bg: "bg-blue-50"
-  }
 ];
 
 export default function ProcessSlider() {
-  const [active, setActive] = useState(1); // Start at step 2 for demo
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  useEffect(() => {
-    intervalRef.current = setInterval(() => {
-      setActive((prev) => (prev + 1) % steps.length);
-    }, 4000);
-    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
-  }, []);
+  // Get only Tech logos
+  const techLogos = categories[1].logos; // Tech is at index 1
 
-  // Pause auto-advance on hover
   const pause = () => intervalRef.current && clearInterval(intervalRef.current);
   const resume = () => {
-    intervalRef.current = setInterval(() => {
-      setActive((prev) => (prev + 1) % steps.length);
-    }, 4000);
+    // You can add auto-scroll logic here if needed
   };
 
   return (
-    <section className="w-full">
-      <div className="max-w-7xl mx-auto px-0 md:px-0">
-        {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 rounded-2xl p-4 mb-10 shadow-sm backdrop-blur-md">
-          {steps.map((step, i) => (
-            <button
-              key={step.label}
-              className={`px-6 py-2 rounded-full font-semibold text-sm transition-all duration-200 border backdrop-blur-md
-                ${active === i
-                  ? "bg-transparent text-white border-[2px] border-[#69D4FF]"
-                  : "bg-gradient-to-r from-white/5 to-white/0 text-gray-200 border-white/10 hover:bg-white/10"}
-              `}
-              onClick={() => setActive(i)}
-              aria-selected={active === i}
-            >
-              {step.label}
-            </button>
-          ))}
-        </div>
-        {/* Content */}
-        <div
-          className={`relative w-full rounded-3xl border border-white/10 flex flex-col md:flex-row items-center justify-between p-8 md:p-16 transition-all duration-500 shadow-xl backdrop-blur-md min-h-[320px] overflow-hidden`}
-        >
-          {/* Gradient Overlay Effect - matches 'What we do' cards */}
-          <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom right, rgba(105, 212, 255, 0.05), rgba(63, 127, 153, 0.05))', mask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)', WebkitMask: 'radial-gradient(circle at top left, transparent 0%, transparent 15%, #fff 50%)' }}></div>
-          {/* Left: Text */}
-          <div className="relative z-10 flex-1 min-w-[260px] max-w-xl">
-            <span className="inline-block mb-4 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-semibold">
-              <span className="text-accent font-bold">Step</span> {steps[active].step.replace('Step ', '')}
-            </span>
-            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white drop-shadow-lg">{steps[active].title}</h3>
-            <p className="text-gray-300 text-lg leading-relaxed">{steps[active].desc}</p>
+    <div className="w-full">
+      {/* Logos - Full Width */}
+      <div
+        onMouseEnter={pause}
+        onMouseLeave={resume}
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-y-10 gap-x-6 px-6 sm:px-10 md:px-20"
+      >
+        {techLogos.map((src, i) => (
+          <div
+            key={i}
+            className="flex items-center justify-center h-12 sm:h-14 md:h-16"
+          >
+            <img
+              src={src}
+              alt={`Logo ${i + 1}`}
+              className="max-h-10 sm:max-h-12 md:max-h-14 object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+            />
           </div>
-          {/* Right: Image (placeholder SVG/box) */}
-          <div className="relative z-10 flex-1 flex justify-center items-center mt-8 md:mt-0 md:ml-8">
-            {/* Placeholder illustration */}
-            <div className="w-[340px] h-[200px] bg-white/10 rounded-2xl border border-white/10 flex items-center justify-center shadow-md backdrop-blur-md">
-              <svg width="180" height="100" viewBox="0 0 180 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="10" y="15" width="160" height="70" rx="8" fill="#23272e" stroke="#69D4FF" strokeWidth="2"/>
-                <rect x="25" y="30" width="110" height="10" rx="4" fill="#3F7F99" />
-                <rect x="25" y="48" width="90" height="10" rx="4" fill="#69D4FF" />
-                <rect x="25" y="66" width="60" height="10" rx="4" fill="#3F7F99" />
-                <circle cx="155" cy="35" r="6" fill="#69D4FF" />
-                <rect x="145" y="30" width="20" height="12" rx="4" fill="#23272e" />
-                <rect x="145" y="48" width="20" height="12" rx="4" fill="#23272e" />
-              </svg>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
-} 
+}

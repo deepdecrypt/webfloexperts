@@ -81,9 +81,12 @@ export default function PricingSection() {
   return (
     <section id="pricing" className="py-20 text-white">
       <div className="container mx-auto px-4 max-w-screen-xl">
-        <div className="mb-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold">Pricing</h2>
-          <p className="mt-4 text-white/70">Choose the plan that fits your pace. Switch or pause anytime.</p>
+        <div className="mb-16 text-center">
+          <span className="text-xs font-semibold uppercase tracking-widest mb-3 block" style={{ color: '#69D4FF' }}>+ PRICING</span>
+          <h2 className="text-lg md:text-4xl font-medium text-white mb-4 leading-tight max-w-[95vw] md:max-w-none mx-auto">
+            Choose the plan that fits your pace.<br />
+            Switch or pause anytime.
+          </h2>
 
           {/* Billing toggle */}
           <div className="mt-6 inline-flex rounded-full border border-white/10 bg-white/5 p-1">
@@ -93,7 +96,7 @@ export default function PricingSection() {
                 <button
                   key={label}
                   onClick={() => setBilling(label)}
-                  className={`px-5 sm:px-6 py-2 rounded-full text-sm font-semibold transition-colors ${isActive ? 'bg-[#FFD166] text-black' : 'text-white/80 hover:text-white'}`}
+                  className={`px-5 sm:px-6 py-2 rounded-full text-sm font-semibold transition-colors ${isActive ? 'bg-[#69D4FF] text-black' : 'text-white/80 hover:text-white'}`}
                   aria-pressed={isActive}
                 >
                   {label}
@@ -156,14 +159,14 @@ export default function PricingSection() {
                   {/* CTA */}
                   <div className="flex items-center gap-3">
                     <Link
-                      href="/book-call"
+                      href="https://calendly.com/webfloexperts/30min"
                       className={`inline-flex items-center justify-center rounded-xl border px-5 py-2.5 text-sm font-semibold transition-colors ${isHighlighted
                         ? 'border-white/20 bg-gradient-to-b from-white/10 to-white/[0.02] text-white hover:from-white/20 hover:to-white/[0.06]'
                         : 'border-white/10 bg-white/[0.03] text-white/90 hover:bg-white/[0.08]'} shadow-[inset_0_0_6px_3px_rgba(255,255,255,0.06)]`}
                     >
                       Get started
                     </Link>
-                    <Link href="/book-call" className="text-white underline underline-offset-4 text-sm">
+                    <Link href="https://calendly.com/webfloexperts/30min" className="text-white underline underline-offset-4 text-sm">
                       book a call
                     </Link>
                   </div>
