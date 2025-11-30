@@ -18,6 +18,195 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
+      {/* JSON-LD Schema Markup for SEO and LLMs */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://webfloexperts.com/#organization",
+                "name": "Webfloexperts",
+                "url": "https://webfloexperts.com",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://webfloexperts.com/wxlogo.svg",
+                  "width": 200,
+                  "height": 60
+                },
+                "description": "Go-to-market focused web development agency helping modern brands get their first sale through high-performing websites, MVPs, and automation.",
+                "email": "contact@webfloexperts.com",
+                "telephone": "+1-XXX-XXX-XXXX",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "US"
+                },
+                "sameAs": [
+                  "https://twitter.com/webfloexperts",
+                  "https://linkedin.com/company/webfloexperts",
+                  "https://instagram.com/webfloexperts"
+                ],
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+1-XXX-XXX-XXXX",
+                  "contactType": "Customer Service",
+                  "email": "contact@webfloexperts.com",
+                  "availableLanguage": ["English"]
+                }
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://webfloexperts.com/#website",
+                "url": "https://webfloexperts.com",
+                "name": "Webfloexperts",
+                "description": "Launch your website & drive leads 10x faster",
+                "publisher": {
+                  "@id": "https://webfloexperts.com/#organization"
+                },
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://webfloexperts.com/search?q={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                }
+              },
+              {
+                "@type": "LocalBusiness",
+                "@id": "https://webfloexperts.com/#localbusiness",
+                "name": "Webfloexperts",
+                "image": "https://webfloexperts.com/hero/hero.png",
+                "priceRange": "$$$",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "US"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "0.0",
+                  "longitude": "0.0"
+                },
+                "url": "https://webfloexperts.com",
+                "telephone": "+1-XXX-XXX-XXXX",
+                "openingHoursSpecification": [
+                  {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "09:00",
+                    "closes": "18:00"
+                  }
+                ]
+              },
+              {
+                "@type": "Service",
+                "serviceType": "Custom Website Development",
+                "provider": {
+                  "@id": "https://webfloexperts.com/#organization"
+                },
+                "areaServed": "Worldwide",
+                "hasOfferCatalog": {
+                  "@type": "OfferCatalog",
+                  "name": "Web Development Services",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom Websites",
+                        "description": "High-performing custom websites built to drive sales and conversions"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Landing Pages",
+                        "description": "Conversion-optimized landing pages tailored to your ICP"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "MVP Development",
+                        "description": "Build MVPs that hit product-market fit faster"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "SEO & CRO",
+                        "description": "Search engine optimization and conversion rate optimization services"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Webflow & Shopify Migrations",
+                        "description": "Seamless platform migrations to Webflow and Shopify"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Marketing Automations",
+                        "description": "Automated marketing workflows to scale your business"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "AI Automations",
+                        "description": "AI-powered automation solutions for modern businesses"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How long does it take to build a Webflow website?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "The timeline for building a Webflow website varies depending on the complexity of the design, features, and content. A simple marketing site might take 4-6 weeks, while a more complex site with custom features could take 8-12 weeks or longer."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the cost of a Webflow website?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Website costs depend on the scope of work, design complexity, and required features. We provide custom quotes after understanding your specific needs during a consultation. Our projects typically start from $X,XXX."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Do you provide ongoing support and maintenance?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, we offer ongoing support and maintenance packages to ensure your website remains secure, up-to-date, and performing optimally after launch."
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "50",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
+            ]
+          })
+        }}
+      />
       <main>
         {/* Hero Section */}
         <section className="relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px] flex flex-col sm:flex-row items-center justify-center px-2 sm:px-4 md:px-8">
