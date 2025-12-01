@@ -15,7 +15,7 @@ const caseStudies = [
     personName: 'Michael Reed',
     personRole: 'Founder at MentorMatch',
     avatarUrl: 'https://randomuser.me/api/portraits/men/31.jpg',
-    imageSrc: '/work/mentormatch.png',
+    imageSrc: '/logo/settlin.in.png',
     projectUrl: 'https://mentormatch.com'
   },
   {
