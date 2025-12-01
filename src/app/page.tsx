@@ -549,7 +549,7 @@ export default function Home() {
                   personName: 'Sarah Collins',
                   personRole: 'Founder at CHA Wellness',
                   avatarUrl: 'https://randomuser.me/api/portraits/women/37.jpg',
-                  imageSrc: '/work/chawellness.png',
+                  imageSrc: '/work/cha.png',
                   projectUrl: 'https://chawellness.in'
                 },
                 {
@@ -639,7 +639,7 @@ export default function Home() {
                   personName: 'Jacob Smith',
                   personRole: 'Founder at DeepDecrypt',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/44.jpg',
-                  imageSrc: '/work/deepdecrypt.png',
+                  imageSrc: '/work/lao.png',
                   projectUrl: 'https://deepdecrypt.com'
                 },
                 {
@@ -659,7 +659,7 @@ export default function Home() {
                   personName: 'Dr. Kevin Morris',
                   personRole: 'Founder at Radical Health',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/45.jpg',
-                  imageSrc: '/work/radicalhealth.png',
+                  imageSrc: '/work/skyo.png',
                   projectUrl: 'https://radical-rcm.com'
                 },
                 {
@@ -669,7 +669,7 @@ export default function Home() {
                   personName: 'Omar Hassan',
                   personRole: 'Founder at Sahlak',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/46.jpg',
-                  imageSrc: '/work/sahlak.png',
+                  imageSrc: '/work/sahllak.png',
                   projectUrl: 'https://sahlak.com'
                 },
                 {
@@ -679,7 +679,7 @@ export default function Home() {
                   personName: 'Rohit Nair',
                   personRole: 'Project Manager at VST Tractors',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/39.jpg',
-                  imageSrc: '/work/vsttractors.png',
+                  imageSrc: '/work/skyo.png',
                   projectUrl: 'https://vsttractors.com'
                 },
                 {
@@ -689,7 +689,7 @@ export default function Home() {
                   personName: 'Aman Gupta',
                   personRole: 'Founder at Grads2Pro',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/47.jpg',
-                  imageSrc: '/work/grads2pro.png',
+                  imageSrc: '/work/lao.png',
                   projectUrl: 'https://grads2pro.com'
                 },
                 {
@@ -699,7 +699,7 @@ export default function Home() {
                   personName: 'Ankit Verma',
                   personRole: 'Growth Head at Humanware HRMS',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/41.jpg',
-                  imageSrc: '/work/humanware.png',
+                  imageSrc: '/work/opmaint.png',
                   projectUrl: 'https://humanwaretechnology.com'
                 }
               ];
