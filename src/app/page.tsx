@@ -750,10 +750,13 @@ export default function Home() {
 
                       {/* IMAGE TOP */}
                       <div className="w-full md:w-1/2 relative group">
-                        <img
+                        <Image
                           src={caseStudies[currentCaseStudy].imageSrc}
                           alt={caseStudies[currentCaseStudy].title}
+                          width={800}
+                          height={600}
                           className="w-full h-auto object-cover"
+                          priority
                         />
                         <a
                           href={caseStudies[currentCaseStudy].projectUrl}
