@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from 'next/link';
 import Marquee from "react-fast-marquee";
 import ProcessSlider from "@/components/ProcessSlider";
@@ -218,7 +217,7 @@ export default function Home() {
                 Skip Dev Team. Save Time. Drive Results.
               </span>
               {/* Heading */}
-              <h1 className="text-2xl md:text-7xl font-medium leading-tight text-white mb-4 pointer-events-auto" style={{ lineHeight: 1.1 }}>
+              <h1 className="text-3xl md:text-7xl font-medium leading-tight text-white mb-4 pointer-events-auto" style={{ lineHeight: 1.1 }}>
                 Launch Your Website<br />
                 <span className="bg-gradient-to-b from-white to-[#7fdaff] text-transparent bg-clip-text">&amp; Drive Leads 10x Faster</span>
               </h1>
@@ -750,13 +749,10 @@ export default function Home() {
 
                       {/* IMAGE TOP */}
                       <div className="w-full md:w-1/2 relative group">
-                        <Image
+                        <img
                           src={caseStudies[currentCaseStudy].imageSrc}
                           alt={caseStudies[currentCaseStudy].title}
-                          width={800}
-                          height={600}
                           className="w-full h-auto object-cover"
-                          priority
                         />
                         <a
                           href={caseStudies[currentCaseStudy].projectUrl}
