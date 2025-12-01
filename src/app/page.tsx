@@ -218,7 +218,7 @@ export default function Home() {
                 Skip Dev Team. Save Time. Drive Results.
               </span>
               {/* Heading */}
-              <h1 className="text-3xl md:text-7xl font-medium leading-tight text-white mb-4 pointer-events-auto" style={{ lineHeight: 1.1 }}>
+              <h1 className="text-2xl md:text-7xl font-medium leading-tight text-white mb-4 pointer-events-auto" style={{ lineHeight: 1.1 }}>
                 Launch Your Website<br />
                 <span className="bg-gradient-to-b from-white to-[#7fdaff] text-transparent bg-clip-text">&amp; Drive Leads 10x Faster</span>
               </h1>
