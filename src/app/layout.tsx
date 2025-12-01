@@ -89,8 +89,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={jakarta.variable + ' font-sans text-white'} style={{ backgroundColor: '#020103' }}>
+    <html lang="en" className={jakarta.variable}>
+      <body className="font-sans text-white antialiased" style={{ backgroundColor: '#020103', fontFamily: 'var(--font-jakarta), sans-serif' }}>
         <Header />
         <main className="pt-20">
           {children}
