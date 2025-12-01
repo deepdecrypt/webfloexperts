@@ -538,7 +538,7 @@ export default function Home() {
                   personName: 'Michael Reed',
                   personRole: 'Founder at MentorMatch',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/31.jpg',
-                  imageSrc: '/work/mentormatch.png',
+                  imageSrc: 'work/mentormatch.png',
                   projectUrl: 'https://mentormatch.com'
                 },
                 {
@@ -548,7 +548,7 @@ export default function Home() {
                   personName: 'Sarah Collins',
                   personRole: 'Founder at CHA Wellness',
                   avatarUrl: 'https://randomuser.me/api/portraits/women/37.jpg',
-                  imageSrc: '/work/cha.png',
+                  imageSrc: 'work/cha.png',
                   projectUrl: 'https://chawellness.in'
                 },
                 {
@@ -558,7 +558,7 @@ export default function Home() {
                   personName: 'Ryan Mitchell',
                   personRole: 'Director at Cloutgency',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
-                  imageSrc: '/work/cloutgency.png',
+                  imageSrc: 'work/cloutgency.png',
                   projectUrl: 'https://cloutgency.com'
                 },
                 {
@@ -568,7 +568,7 @@ export default function Home() {
                   personName: 'Ahmed Al Fariq',
                   personRole: 'CEO at Noor Saray',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/35.jpg',
-                  imageSrc: '/work/noorsaray.png',
+                  imageSrc: 'work/noorsaray.png',
                   projectUrl: 'https://noorsaray.com'
                 },
                 {
@@ -578,7 +578,7 @@ export default function Home() {
                   personName: 'Aisha Noor',
                   personRole: 'Founder at Decorgeous',
                   avatarUrl: 'https://randomuser.me/api/portraits/women/42.jpg',
-                  imageSrc: '/work/decorgeous.png',
+                  imageSrc: 'work/decorgeous.png',
                   projectUrl: 'https://decorgeous.com'
                 },
                 {
@@ -588,7 +588,7 @@ export default function Home() {
                   personName: 'Mark Fernandes',
                   personRole: 'Owner at Kresort',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/43.jpg',
-                  imageSrc: '/work/kresort.png',
+                  imageSrc: 'work/kresort.png',
                   projectUrl: 'https://kresort.com'
                 },
                 {
@@ -598,7 +598,7 @@ export default function Home() {
                   personName: 'Emily Carter',
                   personRole: 'Marketing Director at Everealth',
                   avatarUrl: 'https://randomuser.me/api/portraits/women/38.jpg',
-                  imageSrc: '/work/everealth.png',
+                  imageSrc: 'work/everealth.png',
                   projectUrl: 'https://everrealth.com'
                 },
                 {
@@ -608,7 +608,7 @@ export default function Home() {
                   personName: 'Rahul Sharma',
                   personRole: 'Product Lead at Settlin',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/34.jpg',
-                  imageSrc: '/work/settlin.png',
+                  imageSrc: 'work/settlin.png',
                   projectUrl: 'https://settlin.in'
                 },
                 {
@@ -618,7 +618,7 @@ export default function Home() {
                   personName: 'Nikita Desai',
                   personRole: 'Co-founder at UX Gear',
                   avatarUrl: 'https://randomuser.me/api/portraits/women/41.jpg',
-                  imageSrc: '/work/uxgear.png',
+                  imageSrc: 'work/uxgear.png',
                   projectUrl: 'https://uxgear.in'
                 },
                 {
@@ -628,7 +628,7 @@ export default function Home() {
                   personName: 'Jason Kim',
                   personRole: 'Principal Broker at 5 Pillars Realty',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/36.jpg',
-                  imageSrc: '/work/5pillars.png',
+                  imageSrc: 'work/5pillars.png',
                   projectUrl: 'https://5pillarsrealty.com'
                 },
                 {
@@ -638,7 +638,7 @@ export default function Home() {
                   personName: 'Jacob Smith',
                   personRole: 'Founder at DeepDecrypt',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/44.jpg',
-                  imageSrc: '/work/lao.png',
+                  imageSrc: 'work/lao.png',
                   projectUrl: 'https://deepdecrypt.com'
                 },
                 {
@@ -648,7 +648,7 @@ export default function Home() {
                   personName: 'Daniel Cooper',
                   personRole: 'Marketing Head at OpMaint',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/33.jpg',
-                  imageSrc: '/work/opmaint.png',
+                  imageSrc: 'work/opmaint.png',
                   projectUrl: 'https://opmaint.com'
                 },
                 {
@@ -658,7 +658,7 @@ export default function Home() {
                   personName: 'Dr. Kevin Morris',
                   personRole: 'Founder at Radical Health',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/45.jpg',
-                  imageSrc: '/work/skyo.png',
+                  imageSrc: 'work/skyo.png',
                   projectUrl: 'https://radical-rcm.com'
                 },
                 {
@@ -668,7 +668,7 @@ export default function Home() {
                   personName: 'Omar Hassan',
                   personRole: 'Founder at Sahlak',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/46.jpg',
-                  imageSrc: '/work/sahllak.png',
+                  imageSrc: 'work/sahllak.png',
                   projectUrl: 'https://sahlak.com'
                 },
                 {
@@ -678,7 +678,7 @@ export default function Home() {
                   personName: 'Rohit Nair',
                   personRole: 'Project Manager at VST Tractors',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/39.jpg',
-                  imageSrc: '/work/skyo.png',
+                  imageSrc: 'work/skyo.png',
                   projectUrl: 'https://vsttractors.com'
                 },
                 {
@@ -688,7 +688,7 @@ export default function Home() {
                   personName: 'Aman Gupta',
                   personRole: 'Founder at Grads2Pro',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/47.jpg',
-                  imageSrc: '/work/lao.png',
+                  imageSrc: 'work/lao.png',
                   projectUrl: 'https://grads2pro.com'
                 },
                 {
@@ -698,7 +698,7 @@ export default function Home() {
                   personName: 'Ankit Verma',
                   personRole: 'Growth Head at Humanware HRMS',
                   avatarUrl: 'https://randomuser.me/api/portraits/men/41.jpg',
-                  imageSrc: '/work/opmaint.png',
+                  imageSrc: 'work/opmaint.png',
                   projectUrl: 'https://humanwaretechnology.com'
                 }
               ];
