@@ -530,129 +530,178 @@ export default function Home() {
 
           <div className="container mx-auto px-4 max-w-screen-xl">
             {(() => {
-              const caseStudies = [
 
-                {
-                  category: 'TRANSPORTATION & LOGISTICS',
-                  country: '🇫🇷',
-                  title: 'Fleet routing overhaul cut delivery delays by 28%',
-                  quote: 'The new UX made dispatch effortless. Teams finally see what matters.',
-                  personName: 'Antoine Laurent',
-                  personRole: 'Ops Lead at Routely',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/11.jpg',
-                  imageSrc: '/work/Frame 427321905.png',
-                  projectUrl: '#',
-                },
-                {
-                  category: 'FINTECH',
-                  country: '🇺🇸',
-                  title: 'KYC flow redesign boosted approvals by 19%',
-                  quote: 'Crisp, compliant, and fast. Exactly what we needed to scale.',
-                  personName: 'Ethan Brooks',
-                  personRole: 'Head of Product at ClearPay',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/12.jpg',
-                  imageSrc: '/work/Frame 427321906.png',
-                  projectUrl: '#',
-                },
-                {
-                  category: 'SAAS',
-                  country: '🇬🇧',
-                  title: 'Workspace analytics UI increased weekly active users by 1.6×',
-                  quote: 'The dashboard is finally actionable for non-analysts.',
-                  personName: 'Oliver White',
-                  personRole: 'Product Manager at Insightly',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/13.jpg',
-                  imageSrc: '/work/Group 43046.png',
-                  projectUrl: '#',
-                },
+              const caseStudies = [
                 {
                   category: 'EDTECH',
-                  country: '🇨🇦',
-                  title: 'Course discovery revamp raised enrollments by 22%',
-                  quote: 'Navigation went from confusing to intuitive overnight.',
-                  personName: 'Liam Bennett',
-                  personRole: 'Growth Lead at Learnly',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/14.jpg',
-                  imageSrc: '/work/image 88.png',
-                  projectUrl: '#',
-                },
-                {
-                  category: 'HEALTHCARE',
-                  country: '🇦🇺',
-                  title: 'Appointment booking simplification cut drop-offs by 31%',
-                  quote: 'Patients book faster and staff spend less time on calls.',
-                  personName: 'Noah Thompson',
-                  personRole: 'Clinic Admin',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/15.jpg',
-                  imageSrc: '/work/image 89.png',
-                  projectUrl: '#',
+                  title: 'The foundation that helped us hit $1M ARR',
+                  quote: 'They built our full MVP, website, and AI workflows. The systems they created became the backbone of our early scale and played a huge role in helping us reach $1M ARR.',
+                  personName: 'Michael Reed',
+                  personRole: 'Founder at MentorMatch',
+                  avatarUrl: 'https://randomuser.me/api/portraits/men/31.jpg',
+                  imageSrc: '/work/mentormatch.png',
+                  projectUrl: 'https://mentormatch.com'
                 },
                 {
                   category: 'E-COMMERCE',
-                  country: '🇦🇪',
-                  title: 'Checkout optimizations lifted conversion by 37%',
-                  quote: 'Speed improvements directly moved the revenue needle.',
-                  personName: 'Omar Al Mansoori',
-                  personRole: 'Founder at Skyline Mart',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/16.jpg',
-                  imageSrc: '/work/image 90.png',
-                  projectUrl: '#',
+                  title: 'A full eCommerce build ready for real scale',
+                  quote: 'They handled our storefront, SEO, GTM setup, and backend automations. Everything felt intentional and built for scale from day one.',
+                  personName: 'Sarah Collins',
+                  personRole: 'Founder at CHA Wellness',
+                  avatarUrl: 'https://randomuser.me/api/portraits/women/37.jpg',
+                  imageSrc: '/work/chawellness.png',
+                  projectUrl: 'https://chawellness.in'
+                },
+                {
+                  category: 'AGENCY',
+                  title: 'They became a true extension of our agency',
+                  quote: 'We hired them for a website, but they rebuilt our whole backend—automation, CRM, outbound, funnels. Our operations now run on the systems they built.',
+                  personName: 'Ryan Mitchell',
+                  personRole: 'Director at Cloutgency',
+                  avatarUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+                  imageSrc: '/work/cloutgency.png',
+                  projectUrl: 'https://cloutgency.com'
                 },
                 {
                   category: 'REAL ESTATE',
-                  country: '🇮🇳',
-                  title: 'Lead quality improved 2× with guided listings',
-                  quote: 'Buyers now shortlist with confidence—sales cycles shrank.',
-                  personName: 'Arjun Mehta',
-                  personRole: 'Sales Director at BrickNest',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/17.jpg',
-                  imageSrc: '/work/image 91.png',
-                  projectUrl: '#',
+                  title: 'Their system helped us close high-ticket deals',
+                  quote: 'They built our marketplace and automation workflows end-to-end. The platform directly supported multiple high-value real estate deals in Dubai.',
+                  personName: 'Ahmed Al Fariq',
+                  personRole: 'CEO at Noor Saray',
+                  avatarUrl: 'https://randomuser.me/api/portraits/men/35.jpg',
+                  imageSrc: '/work/noorsaray.png',
+                  projectUrl: 'https://noorsaray.com'
                 },
                 {
-                  category: 'TRAVEL',
-                  country: '🇩🇪',
-                  title: 'Dynamic packaging UX increased AOV by 18%',
-                  quote: 'Add-ons finally feel useful, not intrusive.',
-                  personName: 'Jakob Fischer',
-                  personRole: 'PM at Journee',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/18.jpg',
-                  imageSrc: '/work/image 92.png',
-                  projectUrl: '#',
+                  category: 'DÉCOR',
+                  title: 'We started getting inbound leads for the first time',
+                  quote: 'With the new website, SEO setup, and automations, inbound leads started coming within weeks. A huge shift for our décor business.',
+                  personName: 'Aisha Noor',
+                  personRole: 'Founder at Decorgeous',
+                  avatarUrl: 'https://randomuser.me/api/portraits/women/42.jpg',
+                  imageSrc: '/work/decorgeous.png',
+                  projectUrl: 'https://decorgeous.com'
                 },
                 {
-                  category: 'AI & DATA',
-                  country: '🇸🇬',
-                  title: 'Model monitoring UI reduced false alerts by 42%',
-                  quote: 'Clear signal, less noise—engineers sleep better now.',
-                  personName: 'Wei Liang',
-                  personRole: 'ML Engineer at Sensa',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/19.jpg',
-                  imageSrc: '/work/image 93.png',
-                  projectUrl: '#',
+                  category: 'HOSPITALITY',
+                  title: 'A website that actually drives bookings now',
+                  quote: 'The new site, SEO structure, and automations immediately started bringing in bookings. Clean, simple, and effective.',
+                  personName: 'Mark Fernandes',
+                  personRole: 'Owner at Kresort',
+                  avatarUrl: 'https://randomuser.me/api/portraits/men/43.jpg',
+                  imageSrc: '/work/kresort.png',
+                  projectUrl: 'https://kresort.com'
                 },
                 {
-                  category: 'FOODTECH',
-                  country: '🇪🇸',
-                  title: 'Menu personalization boosted repeat orders by 24%',
-                  quote: 'Customers discover favorites faster—churn went down.',
-                  personName: 'Diego Martín',
-                  personRole: 'COO at TastyGo',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/20.jpg',
-                  imageSrc: '/work/image 95.png',
-                  projectUrl: '#',
+                  category: 'DTC HEALTH',
+                  title: 'The automation became our growth engine',
+                  quote: 'They built our DTC site and full automation + SEO stack. It wasn’t just a website—it\'s the system that drives our education and conversions.',
+                  personName: 'Emily Carter',
+                  personRole: 'Marketing Director at Everealth',
+                  avatarUrl: 'https://randomuser.me/api/portraits/women/38.jpg',
+                  imageSrc: '/work/everealth.png',
+                  projectUrl: 'https://everrealth.com'
                 },
                 {
-                  category: 'NON-PROFIT',
-                  country: '🇮🇹',
-                  title: 'Donation flow redesign increased completions by 33%',
-                  quote: 'Fewer steps, more impact. Donors thank us.',
-                  personName: 'Luca Romano',
-                  personRole: 'Program Director',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/21.jpg',
-                  imageSrc: '/work/image 96.png',
-                  projectUrl: '#',
+                  category: 'REAL ESTATE TECH',
+                  title: 'A rebrand that changed how users understand us',
+                  quote: 'They led a complete rebrand and redesigned our product flows end to end. User clarity improved immediately, and so did conversions.',
+                  personName: 'Rahul Sharma',
+                  personRole: 'Product Lead at Settlin',
+                  avatarUrl: 'https://randomuser.me/api/portraits/men/34.jpg',
+                  imageSrc: '/work/settlin.png',
+                  projectUrl: 'https://settlin.in'
                 },
+                {
+                  category: 'DESIGN AGENCY',
+                  title: 'A reliable Webflow partner for complex builds',
+                  quote: 'We’ve worked with them on our site and multiple client projects. Fast, flexible, and design-aware. They feel like an extension of our internal team.',
+                  personName: 'Nikita Desai',
+                  personRole: 'Co-founder at UX Gear',
+                  avatarUrl: 'https://randomuser.me/api/portraits/women/41.jpg',
+                  imageSrc: '/work/uxgear.png',
+                  projectUrl: 'https://uxgear.in'
+                },
+                {
+                  category: 'REAL ESTATE',
+                  title: 'Fixed our lead flow from day one',
+                  quote: 'Our leads were messy and inconsistent. They built our website and automation setup, making follow-ups predictable and improving conversions immediately.',
+                  personName: 'Jason Kim',
+                  personRole: 'Principal Broker at 5 Pillars Realty',
+                  avatarUrl: 'https://randomuser.me/api/portraits/men/36.jpg',
+                  imageSrc: '/work/5pillars.png',
+                  projectUrl: 'https://5pillarsrealty.com'
+                },
+                {
+                  category: 'AI CONTENT',
+                  title: 'Our entire newsletter workflow runs itself now',
+                  quote: 'They built our content site and automated our publishing flow. What used to take hours now happens automatically. Huge time saver.',
+                  personName: 'Jacob Smith',
+                  personRole: 'Founder at DeepDecrypt',
+                  avatarUrl: 'https://randomuser.me/api/portraits/men/44.jpg',
+                  imageSrc: '/work/deepdecrypt.png',
+                  projectUrl: 'https://deepdecrypt.com'
+                },
+                {
+                  category: 'SAAS',
+                  title: 'They built our website and outbound engine the right way',
+                  quote: 'They rebuilt our site, refined our messaging, and set up a full outbound strategy. It finally gave structure to our pipeline and boosted our GTM momentum.',
+                  personName: 'Daniel Cooper',
+                  personRole: 'Marketing Head at OpMaint',
+                  avatarUrl: 'https://randomuser.me/api/portraits/men/33.jpg',
+                  imageSrc: '/work/opmaint.png',
+                  projectUrl: 'https://opmaint.com'
+                },
+                {
+                  category: 'HEALTHCARE SAAS',
+                  title: 'Clean execution across a complex healthcare MVP',
+                  quote: 'They built our EHR MVP, website, and automation stack. The LinkedIn workflows alone save us hours every week. Smooth and reliable team.',
+                  personName: 'Dr. Kevin Morris',
+                  personRole: 'Founder at Radical Health',
+                  avatarUrl: 'https://randomuser.me/api/portraits/men/45.jpg',
+                  imageSrc: '/work/radicalhealth.png',
+                  projectUrl: 'https://radical-rcm.com'
+                },
+                {
+                  category: 'SAAS',
+                  title: 'Helped us look like a serious player in our market',
+                  quote: 'They delivered our website, SEO work, and automation setup for Sahlak. The new presence helped us position strongly in the Oman market.',
+                  personName: 'Omar Hassan',
+                  personRole: 'Founder at Sahlak',
+                  avatarUrl: 'https://randomuser.me/api/portraits/men/46.jpg',
+                  imageSrc: '/work/sahlak.png',
+                  projectUrl: 'https://sahlak.com'
+                },
+                {
+                  category: 'AGRICULTURE TECH',
+                  title: 'Delivered a complex agritech MVP with speed',
+                  quote: 'They built our agritech MVP across regions with product catalog and workflow systems. Efficient execution and strong domain understanding.',
+                  personName: 'Rohit Nair',
+                  personRole: 'Project Manager at VST Tractors',
+                  avatarUrl: 'https://randomuser.me/api/portraits/men/39.jpg',
+                  imageSrc: '/work/vsttractors.png',
+                  projectUrl: 'https://vsttractors.com'
+                },
+                {
+                  category: 'EDTECH',
+                  title: 'Automated our entire student funnel',
+                  quote: 'They built our website and set up inbound + outbound automations. Lead journeys became smoother, and conversions improved instantly.',
+                  personName: 'Aman Gupta',
+                  personRole: 'Founder at Grads2Pro',
+                  avatarUrl: 'https://randomuser.me/api/portraits/men/47.jpg',
+                  imageSrc: '/work/grads2pro.png',
+                  projectUrl: 'https://grads2pro.com'
+                },
+                {
+                  category: 'HR TECH',
+                  title: 'Gave us the scale our marketing was missing',
+                  quote: 'They rebuilt our SEO and automation flows, making our marketing predictable and helping us scale faster in the Mumbai market.',
+                  personName: 'Ankit Verma',
+                  personRole: 'Growth Head at Humanware HRMS',
+                  avatarUrl: 'https://randomuser.me/api/portraits/men/41.jpg',
+                  imageSrc: '/work/humanware.png',
+                  projectUrl: 'https://humanwaretechnology.com'
+                }
               ];
 
               const nextCaseStudy = () => {
@@ -723,8 +772,9 @@ export default function Home() {
                       {/* TEXT BELOW */}
                       <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center">
                         <div className="flex items-center gap-3 text-sm font-medium text-white/70 uppercase tracking-wide mb-4">
-                          <span>{caseStudies[currentCaseStudy].category}</span>
-                          <span className="opacity-60">{caseStudies[currentCaseStudy].country}</span>
+                          <span className="text-blue-400 font-mono text-sm tracking-wider uppercase">
+                            {caseStudies[currentCaseStudy].category}
+                          </span>
                         </div>
 
                         <h3 className="text-xl md:text-3xl font-semibold leading-tight text-white mb-4">
