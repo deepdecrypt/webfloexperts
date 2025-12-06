@@ -58,7 +58,7 @@ const categories = [
       "/Tech_logo/35 1.png",
       "/Tech_logo/36 1.png",
       "/Tech_logo/37 1.png",
-
+      "/Tech_logo/node.png",
     ],
   },
   {

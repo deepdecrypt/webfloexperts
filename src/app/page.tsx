@@ -232,7 +232,9 @@ export default function Home() {
                 className="pointer-events-auto px-8 py-3 rounded-xl text-lg font-semibold text-black bg-white shadow-lg hover:bg-gray-100 transition-all border border-white flex items-center gap-2"
                 style={{ boxShadow: '0 2px 16px 0 rgba(0,0,0,0.10)' }}
               >
-                See Pricing <span className="ml-1 text-xl">&rarr;</span>
+                See Pricing <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 ml-1">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </a>
             </div>
           </div>
@@ -259,7 +261,9 @@ export default function Home() {
                 className="pointer-events-auto px-8 py-3 rounded-xl text-lg font-semibold text-black bg-white shadow-lg hover:bg-gray-100 transition-all border border-white flex items-center gap-2"
                 style={{ boxShadow: '0 2px 16px 0 rgba(0,0,0,0.10)' }}
               >
-                See Pricing <span className="ml-1 text-xl">&rarr;</span>
+                See Pricing <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 ml-1">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </a>
             </div>
           </div>
