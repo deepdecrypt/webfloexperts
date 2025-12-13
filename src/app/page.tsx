@@ -14,7 +14,7 @@ const CASE_STUDIES = [
     title: 'The foundation that helped us hit $1M ARR',
     quote: 'They built our full MVP, website, and AI workflows. The systems they created became the backbone of our early scale and played a huge role in helping us reach $1M ARR.',
     personName: 'Aniket Roy',
-    personRole: 'Founder at MentorMatch',
+    personRole: 'Head of Marketing at Mentor Match',
     avatarUrl: 'https://randomuser.me/api/portraits/men/31.jpg',
     imageSrc: '/work/mentormatch.png',
     projectUrl: 'https://mentormatch.com'
@@ -47,14 +47,14 @@ const CASE_STUDIES = [
     personRole: 'Operations Lead at Lao Brewery',
     avatarUrl: 'https://randomuser.me/api/portraits/men/44.jpg',
     imageSrc: '/work/lao.png',
-    projectUrl: 'https://laobrewery.com'
+    projectUrl: 'https://beerlao.la/'
   },
   {
     category: 'SAAS',
     title: 'They built our website and outbound engine the right way',
     quote: 'They rebuilt our site, refined our messaging, and set up a full outbound strategy. It finally gave structure to our pipeline and boosted our GTM momentum.',
     personName: 'Aditya Verma',
-    personRole: 'Marketing Head at OpMaint',
+    personRole: 'Marketing Head at Opmaint',
     avatarUrl: 'https://randomuser.me/api/portraits/men/33.jpg',
     imageSrc: '/work/opmaint.png',
     projectUrl: 'https://opmaint.com'
