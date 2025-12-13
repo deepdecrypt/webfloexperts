@@ -4,9 +4,233 @@ import Image from "next/image";
 import Link from 'next/link';
 import Marquee from "react-fast-marquee";
 import ProcessSlider from "@/components/ProcessSlider";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import CaseStudyCard from "@/components/CaseStudyCard";
 import PricingSection from "@/components/PricingSection";
+
+const CASE_STUDIES = [
+  {
+    category: 'EDTECH',
+    title: 'The foundation that helped us hit $1M ARR',
+    quote: 'They built our full MVP, website, and AI workflows. The systems they created became the backbone of our early scale and played a huge role in helping us reach $1M ARR.',
+    personName: 'Aniket Roy',
+    personRole: 'Founder at MentorMatch',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/31.jpg',
+    imageSrc: '/work/mentormatch.png',
+    projectUrl: 'https://mentormatch.com'
+  },
+  {
+    category: 'DESIGN AGENCY',
+    title: 'Reliable development partner for our design team',
+    quote: 'We needed a team that could match our design pace. They integrated into our workflow and helped us deliver projects consistently without bottlenecks.',
+    personName: 'Arjun Patel',
+    personRole: 'Creative Director at UXGear',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+    imageSrc: '/work/uxgear.png',
+    projectUrl: 'https://uxgear.in'
+  },
+  {
+    category: 'REAL ESTATE',
+    title: 'Streamlined our lead management process',
+    quote: 'Our lead tracking was manual and inconsistent. They set up a website and automation system that made our follow-ups structured and reliable.',
+    personName: 'Vikram Singh',
+    personRole: 'Principal Broker at 5 Pillars Realty',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/36.jpg',
+    imageSrc: '/work/5pillars.png',
+    projectUrl: 'https://5pillarsrealty.com'
+  },
+  {
+    category: 'ENTERPRISE SYSTEMS',
+    title: 'Digitized employee food court with RFID & Low Code',
+    quote: 'They built a complete food court management system for our in-house employees using RFID and low-code apps. It streamlined our entire cafeteria operations seamlessly.',
+    personName: 'Siddharth Gupta',
+    personRole: 'Operations Lead at Lao Brewery',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/44.jpg',
+    imageSrc: '/work/lao.png',
+    projectUrl: 'https://laobrewery.com'
+  },
+  {
+    category: 'SAAS',
+    title: 'They built our website and outbound engine the right way',
+    quote: 'They rebuilt our site, refined our messaging, and set up a full outbound strategy. It finally gave structure to our pipeline and boosted our GTM momentum.',
+    personName: 'Aditya Verma',
+    personRole: 'Marketing Head at OpMaint',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/33.jpg',
+    imageSrc: '/work/opmaint.png',
+    projectUrl: 'https://opmaint.com'
+  },
+  {
+    category: 'AGRI TOURISM & E-COMMERCE',
+    title: 'Farm stays & fresh produce marketplace',
+    quote: 'They built a unified platform for booking farm stays and ordering fresh vegetables directly from the source. A complex dual-sided marketplace launched in record time.',
+    personName: 'Rajesh Kumar',
+    personRole: 'Founder at Skyo',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/45.jpg',
+    imageSrc: '/work/skyo.png',
+    projectUrl: 'https://skyo.com'
+  },
+  {
+    category: 'SAAS',
+    title: 'Helped us look like a serious player in our market',
+    quote: 'They delivered our website, SEO work, and automation setup for Sahlak. The new presence helped us position strongly in the Oman market.',
+    personName: 'Sameer Khan',
+    personRole: 'Founder at Sahlak',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/46.jpg',
+    imageSrc: '/work/sahllak.png',
+    projectUrl: 'https://sahlak.com'
+  },
+  {
+    category: 'D2C TEA BRAND',
+    title: 'Scaling a premium tea brand globally',
+    quote: 'They handled our D2C storefront, subscription flows, and global SEO. Our tea sales skyrocketed, and the backend automation handles thousands of orders effortlessly.',
+    personName: 'Suresh Reddy',
+    personRole: 'Founder at CHA Wellness',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/37.jpg',
+    imageSrc: '/work/cha.png',
+    projectUrl: 'https://chawellness.in'
+  },
+  {
+    category: 'AGENCY',
+    title: 'They became a true extension of our agency',
+    quote: 'We hired them for a website, but they rebuilt our whole backend—automation, CRM, outbound, funnels. Our operations now run on the systems they built.',
+    personName: 'Ravi Mehta',
+    personRole: 'Director at Cloutgency',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
+    imageSrc: '/work/cloutgency.png',
+    projectUrl: 'https://cloutgency.com'
+  },
+  {
+    category: 'REAL ESTATE',
+    title: 'Their system helped us close high-ticket deals',
+    quote: 'They built our marketplace and automation workflows end-to-end. The platform directly supported multiple high-value real estate deals in Dubai.',
+    personName: 'Kabir Ahmed',
+    personRole: 'CEO at Noor Saray',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/35.jpg',
+    imageSrc: '/work/noorsaray.png',
+    projectUrl: 'https://noorsaray.com'
+  },
+  {
+    category: 'DÉCOR',
+    title: 'We started getting inbound leads for the first time',
+    quote: 'With the new website, SEO setup, and automations, inbound leads started coming within weeks. A huge shift for our décor business.',
+    personName: 'Amit Bansal',
+    personRole: 'Founder at Decorgeous',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/42.jpg',
+    imageSrc: '/work/decorgeous.png',
+    projectUrl: 'https://decorgeous.com'
+  },
+  {
+    category: 'HOSPITALITY',
+    title: 'A website that actually drives bookings now',
+    quote: 'The new site, SEO structure, and automations immediately started bringing in bookings. Clean, simple, and effective.',
+    personName: 'Manoj Fernandez',
+    personRole: 'Owner at Kresort',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/43.jpg',
+    imageSrc: '/work/kresort.png',
+    projectUrl: 'https://kresort.com'
+  },
+  {
+    category: 'DTC HEALTH',
+    title: 'The automation became our growth engine',
+    quote: 'They built our DTC site and full automation + SEO stack. It wasn’t just a website—it\'s the system that drives our education and conversions.',
+    personName: 'Karthik Iyer',
+    personRole: 'Marketing Director at Everealth',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/38.jpg',
+    imageSrc: '/work/everealth.png',
+    projectUrl: 'https://everrealth.com'
+  },
+  {
+    category: 'REAL ESTATE TECH',
+    title: 'A rebrand that changed how users understand us',
+    quote: 'They led a complete rebrand and redesigned our product flows end to end. User clarity improved immediately, and so did conversions.',
+    personName: 'Rahul Sharma',
+    personRole: 'Product Lead at Settlin',
+    avatarUrl: 'https://randomuser.me/api/portraits/men/34.jpg',
+    imageSrc: '/work/settlin.png',
+    projectUrl: 'https://settlin.in'
+  }
+];
+
+const FAQS = [
+  {
+    question: "What is WebfloExperts?",
+    answer: "WebfloExperts is a growth-focused web and GTM agency helping businesses maintain, improve, and scale their digital products. We work across design, development, SEO, AI-driven automation, and MVP builds — using Webflow for the fastest go-to-market, and custom development when required."
+  },
+  {
+    question: "Why do you prefer Webflow for most projects?",
+    answer: "We prefer Webflow for speed and rapid GTM execution. It allows us to design, build, test, and iterate quickly. For most marketing sites, landing pages, and early-stage products, Webflow helps launch faster and validate ideas sooner."
+  },
+  {
+    question: "Do you also do custom development?",
+    answer: "Yes. We handle custom development when a project requires advanced logic, backend systems, or complex integrations. We choose the stack based on your business needs, not a fixed tool."
+  },
+  {
+    question: "Do you offer AI automation services?",
+    answer: "Yes. We build AI-powered automation to improve lead handling, operations, and internal workflows. This includes AI-assisted lead qualification, automated follow-ups, content workflows, and intelligent integrations with your CRM and tools."
+  },
+  {
+    question: "What’s the difference between Development, Growth, and Scale plans?",
+    answer: "Each plan supports a different stage of growth:\n• Development: Website maintenance and updates\n• Growth: Design, SEO, copywriting, automation, and AI workflows\n• Scale: Full GTM execution including CRO, AI automation, A/B testing, and MVP builds"
+  },
+  {
+    question: "What does “average turnaround time” mean?",
+    answer: "It’s the typical time taken to complete a task once it’s started:\n• Development: ~72 hours\n• Growth: ~48 hours\n• Scale: ~32 hours (priority delivery)\n\nComplex tasks may take longer, but timelines are always shared upfront."
+  },
+  {
+    question: "How does task execution work?",
+    answer: "You submit requests through a shared task board or communication channel. Tasks are worked on sequentially to ensure focus, quality, and predictable delivery."
+  },
+  {
+    question: "Is there a limit to how many requests I can submit?",
+    answer: "You can submit unlimited requests, but we work on one active task at a time per plan."
+  },
+  {
+    question: "Is design included in all plans?",
+    answer: "Design coverage depends on the plan:\n• Development: No design or graphic assets\n• Growth: Web design and graphic assets included\n• Scale: Full UI/UX design, branding assets, and conversion-focused layouts"
+  },
+  {
+    question: "Do you provide SEO and CRO services?",
+    answer: "Yes:\n• Growth: Technical and on-page SEO\n• Scale: Full SEO and CRO, including content optimization and A/B testing funnels"
+  },
+  {
+    question: "What kind of automation do you build?",
+    answer: "We build both workflow and AI-driven automation, including:\n• CRM integrations\n• AI-powered lead qualification\n• Email, WhatsApp, and chatbot workflows\n• Funnel automation connected to your website\n• AI-assisted internal operations"
+  },
+  {
+    question: "Can WebfloExperts help with MVP development?",
+    answer: "Yes. MVP design and development are included in the Scale plan, ideal for startups and teams launching quickly."
+  },
+  {
+    question: "Is there a minimum contract or lock-in period?",
+    answer: "No. All plans are monthly. You can pause, cancel, upgrade, or downgrade at any time."
+  },
+  {
+    question: "How long should I work with WebfloExperts to see results?",
+    answer: "We recommend a minimum of 6 months to see meaningful results from SEO, automation, AI workflows, CRO, and GTM execution."
+  },
+  {
+    question: "Who is WebfloExperts best suited for?",
+    answer: "WebfloExperts is a strong fit for:\n• Startups and SaaS teams\n• Founders launching MVPs\n• Businesses needing fast GTM execution\n• Teams that want Webflow speed, AI automation, and custom flexibility when required"
+  }
+];
+
+const CaseStudySkeleton = () => (
+  <div className="w-full bg-white/5 rounded-2xl overflow-hidden flex flex-col md:flex-row mt-6 md:mt-10 border border-white/10 animate-pulse">
+    <div className="w-full md:w-1/2 h-64 md:h-auto bg-white/10" />
+    <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center space-y-4">
+      <div className="h-4 w-24 bg-white/10 rounded" />
+      <div className="h-8 w-3/4 bg-white/10 rounded" />
+      <div className="h-20 w-full bg-white/10 rounded" />
+      <div className="flex items-center gap-3 mt-6">
+        <div className="w-10 h-10 rounded-full bg-white/10" />
+        <div className="space-y-2">
+          <div className="h-3 w-32 bg-white/10 rounded" />
+          <div className="h-2 w-24 bg-white/10 rounded" />
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('All');
@@ -15,6 +239,56 @@ export default function Home() {
   const [currentCaseStudy, setCurrentCaseStudy] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    CASE_STUDIES.forEach((study) => {
+      const img = new window.Image();
+      img.src = study.imageSrc;
+    });
+  }, []);
+
+  const nextCaseStudy = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentCaseStudy((prev) => (prev + 1) % CASE_STUDIES.length);
+      setIsTransitioning(false);
+    }, 2000);
+  };
+
+  const prevCaseStudy = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentCaseStudy((prev) => (prev - 1 + CASE_STUDIES.length) % CASE_STUDIES.length);
+      setIsTransitioning(false);
+    }, 2000);
+  };
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) {
+      nextCaseStudy();
+    }
+    if (isRightSwipe) {
+      prevCaseStudy();
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
@@ -533,339 +807,140 @@ export default function Home() {
 
 
           <div className="container mx-auto px-4 max-w-screen-xl">
-            {(() => {
+            <div
+              className="relative"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
 
-              const caseStudies = [
-                {
-                  category: 'EDTECH',
-                  title: 'The foundation that helped us hit $1M ARR',
-                  quote: 'They built our full MVP, website, and AI workflows. The systems they created became the backbone of our early scale and played a huge role in helping us reach $1M ARR.',
-                  personName: 'Michael Reed',
-                  personRole: 'Founder at MentorMatch',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/31.jpg',
-                  imageSrc: '/work/mentormatch.png',
-                  projectUrl: 'https://mentormatch.com'
-                },
-                {
-                  category: 'E-COMMERCE',
-                  title: 'A full eCommerce build ready for real scale',
-                  quote: 'They handled our storefront, SEO, GTM setup, and backend automations. Everything felt intentional and built for scale from day one.',
-                  personName: 'Sarah Collins',
-                  personRole: 'Founder at CHA Wellness',
-                  avatarUrl: 'https://randomuser.me/api/portraits/women/37.jpg',
-                  imageSrc: '/work/cha.png',
-                  projectUrl: 'https://chawellness.in'
-                },
-                {
-                  category: 'AGENCY',
-                  title: 'They became a true extension of our agency',
-                  quote: 'We hired them for a website, but they rebuilt our whole backend—automation, CRM, outbound, funnels. Our operations now run on the systems they built.',
-                  personName: 'Ryan Mitchell',
-                  personRole: 'Director at Cloutgency',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
-                  imageSrc: '/work/cloutgency.png',
-                  projectUrl: 'https://cloutgency.com'
-                },
-                {
-                  category: 'REAL ESTATE',
-                  title: 'Their system helped us close high-ticket deals',
-                  quote: 'They built our marketplace and automation workflows end-to-end. The platform directly supported multiple high-value real estate deals in Dubai.',
-                  personName: 'Ahmed Al Fariq',
-                  personRole: 'CEO at Noor Saray',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/35.jpg',
-                  imageSrc: '/work/noorsaray.png',
-                  projectUrl: 'https://noorsaray.com'
-                },
-                {
-                  category: 'DÉCOR',
-                  title: 'We started getting inbound leads for the first time',
-                  quote: 'With the new website, SEO setup, and automations, inbound leads started coming within weeks. A huge shift for our décor business.',
-                  personName: 'Aisha Noor',
-                  personRole: 'Founder at Decorgeous',
-                  avatarUrl: 'https://randomuser.me/api/portraits/women/42.jpg',
-                  imageSrc: '/work/decorgeous.png',
-                  projectUrl: 'https://decorgeous.com'
-                },
-                {
-                  category: 'HOSPITALITY',
-                  title: 'A website that actually drives bookings now',
-                  quote: 'The new site, SEO structure, and automations immediately started bringing in bookings. Clean, simple, and effective.',
-                  personName: 'Mark Fernandes',
-                  personRole: 'Owner at Kresort',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/43.jpg',
-                  imageSrc: '/work/kresort.png',
-                  projectUrl: 'https://kresort.com'
-                },
-                {
-                  category: 'DTC HEALTH',
-                  title: 'The automation became our growth engine',
-                  quote: 'They built our DTC site and full automation + SEO stack. It wasn’t just a website—it\'s the system that drives our education and conversions.',
-                  personName: 'Emily Carter',
-                  personRole: 'Marketing Director at Everealth',
-                  avatarUrl: 'https://randomuser.me/api/portraits/women/38.jpg',
-                  imageSrc: '/work/everealth.png',
-                  projectUrl: 'https://everrealth.com'
-                },
-                {
-                  category: 'REAL ESTATE TECH',
-                  title: 'A rebrand that changed how users understand us',
-                  quote: 'They led a complete rebrand and redesigned our product flows end to end. User clarity improved immediately, and so did conversions.',
-                  personName: 'Rahul Sharma',
-                  personRole: 'Product Lead at Settlin',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/34.jpg',
-                  imageSrc: '/work/settlin.png',
-                  projectUrl: 'https://settlin.in'
-                },
-                {
-                  category: 'DESIGN AGENCY',
-                  title: 'A reliable Webflow partner for complex builds',
-                  quote: 'We’ve worked with them on our site and multiple client projects. Fast, flexible, and design-aware. They feel like an extension of our internal team.',
-                  personName: 'Nikita Desai',
-                  personRole: 'Co-founder at UX Gear',
-                  avatarUrl: 'https://randomuser.me/api/portraits/women/41.jpg',
-                  imageSrc: '/work/uxgear.png',
-                  projectUrl: 'https://uxgear.in'
-                },
-                {
-                  category: 'REAL ESTATE',
-                  title: 'Fixed our lead flow from day one',
-                  quote: 'Our leads were messy and inconsistent. They built our website and automation setup, making follow-ups predictable and improving conversions immediately.',
-                  personName: 'Jason Kim',
-                  personRole: 'Principal Broker at 5 Pillars Realty',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/36.jpg',
-                  imageSrc: '/work/5pillars.png',
-                  projectUrl: 'https://5pillarsrealty.com'
-                },
-                {
-                  category: 'AI CONTENT',
-                  title: 'Our entire newsletter workflow runs itself now',
-                  quote: 'They built our content site and automated our publishing flow. What used to take hours now happens automatically. Huge time saver.',
-                  personName: 'Jacob Smith',
-                  personRole: 'Founder at DeepDecrypt',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/44.jpg',
-                  imageSrc: '/work/lao.png',
-                  projectUrl: 'https://deepdecrypt.com'
-                },
-                {
-                  category: 'SAAS',
-                  title: 'They built our website and outbound engine the right way',
-                  quote: 'They rebuilt our site, refined our messaging, and set up a full outbound strategy. It finally gave structure to our pipeline and boosted our GTM momentum.',
-                  personName: 'Daniel Cooper',
-                  personRole: 'Marketing Head at OpMaint',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/33.jpg',
-                  imageSrc: '/work/opmaint.png',
-                  projectUrl: 'https://opmaint.com'
-                },
-                {
-                  category: 'HEALTHCARE SAAS',
-                  title: 'Clean execution across a complex healthcare MVP',
-                  quote: 'They built our EHR MVP, website, and automation stack. The LinkedIn workflows alone save us hours every week. Smooth and reliable team.',
-                  personName: 'Dr. Kevin Morris',
-                  personRole: 'Founder at Radical Health',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/45.jpg',
-                  imageSrc: '/work/skyo.png',
-                  projectUrl: 'https://radical-rcm.com'
-                },
-                {
-                  category: 'SAAS',
-                  title: 'Helped us look like a serious player in our market',
-                  quote: 'They delivered our website, SEO work, and automation setup for Sahlak. The new presence helped us position strongly in the Oman market.',
-                  personName: 'Omar Hassan',
-                  personRole: 'Founder at Sahlak',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/46.jpg',
-                  imageSrc: '/work/sahllak.png',
-                  projectUrl: 'https://sahlak.com'
-                },
-                {
-                  category: 'AGRICULTURE TECH',
-                  title: 'Delivered a complex agritech MVP with speed',
-                  quote: 'They built our agritech MVP across regions with product catalog and workflow systems. Efficient execution and strong domain understanding.',
-                  personName: 'Rohit Nair',
-                  personRole: 'Project Manager at VST Tractors',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/39.jpg',
-                  imageSrc: '/work/vsttractors.png',
-                  projectUrl: 'https://vsttractors.com'
-                },
-                {
-                  category: 'EDTECH',
-                  title: 'Automated our entire student funnel',
-                  quote: 'They built our website and set up inbound + outbound automations. Lead journeys became smoother, and conversions improved instantly.',
-                  personName: 'Aman Gupta',
-                  personRole: 'Founder at Grads2Pro',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/47.jpg',
-                  imageSrc: '/work/grads2pro.png',
-                  projectUrl: 'https://grads2pro.com'
-                },
-                {
-                  category: 'HR TECH',
-                  title: 'Gave us the scale our marketing was missing',
-                  quote: 'They rebuilt our SEO and automation flows, making our marketing predictable and helping us scale faster in the Mumbai market.',
-                  personName: 'Ankit Verma',
-                  personRole: 'Growth Head at Humanware HRMS',
-                  avatarUrl: 'https://randomuser.me/api/portraits/men/41.jpg',
-                  imageSrc: '/work/humanware.png',
-                  projectUrl: 'https://humanwaretechnology.com'
-                }
-              ];
+              {/* === CARD (FULL WIDTH MOBILE) === */}
+              <div className="px-4 md:px-16">
+                {isTransitioning ? (
+                  <CaseStudySkeleton />
+                ) : (
+                  <div className="w-full bg-white/5 rounded-2xl overflow-hidden flex flex-col md:flex-row mt-6 md:mt-10 border border-white/10 animate-fadeIn">
 
-              const nextCaseStudy = () => {
-                setCurrentCaseStudy((prev) => (prev + 1) % caseStudies.length);
-              };
+                    {/* IMAGE TOP */}
+                    <div className="w-full md:w-1/2 relative group">
+                      <img
+                        src={CASE_STUDIES[currentCaseStudy].imageSrc}
+                        alt={CASE_STUDIES[currentCaseStudy].title}
+                        className="w-full h-auto object-cover"
+                      />
+                      <a
+                        href={CASE_STUDIES[currentCaseStudy].projectUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      >
+                        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                          <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                        </div>
+                      </a>
+                    </div>
 
-              const prevCaseStudy = () => {
-                setCurrentCaseStudy((prev) => (prev - 1 + caseStudies.length) % caseStudies.length);
-              };
-
-              const minSwipeDistance = 50;
-
-              const onTouchStart = (e: React.TouchEvent) => {
-                setTouchEnd(null);
-                setTouchStart(e.targetTouches[0].clientX);
-              };
-
-              const onTouchMove = (e: React.TouchEvent) => {
-                setTouchEnd(e.targetTouches[0].clientX);
-              };
-
-              const onTouchEnd = () => {
-                if (!touchStart || !touchEnd) return;
-                const distance = touchStart - touchEnd;
-                const isLeftSwipe = distance > minSwipeDistance;
-                const isRightSwipe = distance < -minSwipeDistance;
-                if (isLeftSwipe) {
-                  nextCaseStudy();
-                }
-                if (isRightSwipe) {
-                  prevCaseStudy();
-                }
-              };
-
-              return (
-                <div
-                  className="relative"
-                  onTouchStart={onTouchStart}
-                  onTouchMove={onTouchMove}
-                  onTouchEnd={onTouchEnd}
-                >
-
-                  {/* === CARD (FULL WIDTH MOBILE) === */}
-                  <div className="px-4 md:px-16">
-                    <div className="w-full bg-white/5 rounded-2xl overflow-hidden flex flex-col md:flex-row mt-6 md:mt-10 border border-white/10">
-
-                      {/* IMAGE TOP */}
-                      <div className="w-full md:w-1/2 relative group">
-                        <img
-                          src={caseStudies[currentCaseStudy].imageSrc}
-                          alt={caseStudies[currentCaseStudy].title}
-                          className="w-full h-auto object-cover"
-                        />
-                        <a
-                          href={caseStudies[currentCaseStudy].projectUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        >
-                          <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                            <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                          </div>
-                        </a>
+                    {/* TEXT BELOW */}
+                    <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center">
+                      <div className="flex items-center gap-3 text-sm font-medium text-white/70 uppercase tracking-wide mb-4">
+                        <span className="text-blue-400 font-mono text-sm tracking-wider uppercase">
+                          {CASE_STUDIES[currentCaseStudy].category}
+                        </span>
                       </div>
 
-                      {/* TEXT BELOW */}
-                      <div className="w-full md:w-1/2 p-6 md:p-12 flex flex-col justify-center">
-                        <div className="flex items-center gap-3 text-sm font-medium text-white/70 uppercase tracking-wide mb-4">
-                          <span className="text-blue-400 font-mono text-sm tracking-wider uppercase">
-                            {caseStudies[currentCaseStudy].category}
-                          </span>
-                        </div>
+                      <h3 className="text-xl md:text-3xl font-semibold leading-tight text-white mb-4">
+                        {CASE_STUDIES[currentCaseStudy].title}
+                      </h3>
 
-                        <h3 className="text-xl md:text-3xl font-semibold leading-tight text-white mb-4">
-                          {caseStudies[currentCaseStudy].title}
-                        </h3>
+                      <div className="mt-auto">
+                        <blockquote className="text-white/80 italic mb-6">
+                          “{CASE_STUDIES[currentCaseStudy].quote}”
+                        </blockquote>
 
-                        <div className="mt-auto">
-                          <blockquote className="text-white/80 italic mb-6">
-                            “{caseStudies[currentCaseStudy].quote}”
-                          </blockquote>
-
-                          <div className="flex items-center gap-3">
-                            <img
-                              src={caseStudies[currentCaseStudy].avatarUrl}
-                              alt={caseStudies[currentCaseStudy].personName}
-                              className="w-10 h-10 rounded-full object-cover"
-                            />
-                            <div>
-                              <div className="text-sm font-semibold text-white">
-                                {caseStudies[currentCaseStudy].personName}
-                              </div>
-                              <div className="text-xs text-white/70">
-                                {caseStudies[currentCaseStudy].personRole}
-                              </div>
+                        <div className="flex items-center gap-3">
+                          <img
+                            src={CASE_STUDIES[currentCaseStudy].avatarUrl}
+                            alt={CASE_STUDIES[currentCaseStudy].personName}
+                            className="w-10 h-10 rounded-full object-cover"
+                          />
+                          <div>
+                            <div className="text-sm font-semibold text-white">
+                              {CASE_STUDIES[currentCaseStudy].personName}
+                            </div>
+                            <div className="text-xs text-white/70">
+                              {CASE_STUDIES[currentCaseStudy].personRole}
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                )}
+              </div>
 
-                  {/* === INDICATORS (MOBILE + DESKTOP) === */}
-                  <div className="flex justify-center mt-12 space-x-2">
-                    {caseStudies.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentCaseStudy(index)}
-                        className={`w-3 h-3 rounded-full transition-all ${index === currentCaseStudy ? 'bg-white' : 'bg-white/30'
-                          }`}
-                        aria-label={`Go to case study ${index + 1}`}
-                      />
-                    ))}
-                  </div>
-
-                  {/* === MOBILE ARROWS BELOW INDICATORS === */}
-                  <div className="flex justify-center mt-5 gap-4 md:hidden">
-                    <button
-                      onClick={prevCaseStudy}
-                      className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center border border-white/20 backdrop-blur-md"
-                    >
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </button>
-
-                    <button
-                      onClick={nextCaseStudy}
-                      className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center border border-white/20 backdrop-blur-md"
-                    >
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                  </div>
-
-                  {/* === DESKTOP ARROWS (LEFT + RIGHT MIDDLE) === */}
+              {/* === INDICATORS (MOBILE + DESKTOP) === */}
+              <div className="flex justify-center mt-12 space-x-2">
+                {CASE_STUDIES.map((_, index) => (
                   <button
-                    onClick={prevCaseStudy}
-                    className="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full items-center justify-center border border-white/20 backdrop-blur-md"
-                  >
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
+                    key={index}
+                    onClick={() => {
+                      if (isTransitioning) return;
+                      setIsTransitioning(true);
+                      setTimeout(() => {
+                        setCurrentCaseStudy(index);
+                        setIsTransitioning(false);
+                      }, 2000);
+                    }}
+                    className={`w-3 h-3 rounded-full transition-all ${index === currentCaseStudy ? 'bg-white' : 'bg-white/30'
+                      }`}
+                    aria-label={`Go to case study ${index + 1}`}
+                  />
+                ))}
+              </div>
 
-                  <button
-                    onClick={nextCaseStudy}
-                    className="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full items-center justify-center border border-white/20 backdrop-blur-md"
-                  >
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
+              {/* === MOBILE ARROWS BELOW INDICATORS === */}
+              <div className="flex justify-center mt-5 gap-4 md:hidden">
+                <button
+                  onClick={prevCaseStudy}
+                  className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center border border-white/20 backdrop-blur-md"
+                >
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
 
-                </div>
-              );
-            })()}
+                <button
+                  onClick={nextCaseStudy}
+                  className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center border border-white/20 backdrop-blur-md"
+                >
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* === DESKTOP ARROWS (LEFT + RIGHT MIDDLE) === */}
+              <button
+                onClick={prevCaseStudy}
+                className="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full items-center justify-center border border-white/20 backdrop-blur-md"
+              >
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+
+              <button
+                onClick={nextCaseStudy}
+                className="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full items-center justify-center border border-white/20 backdrop-blur-md"
+              >
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+            </div>
           </div>
 
         </section>
@@ -1032,80 +1107,31 @@ export default function Home() {
 
             {/* Accordion */}
             <div className="space-y-4">
-              {/* FAQ Item 1 */}
-              <div className="backdrop-blur-md rounded-xl border border-white/10" style={{ backgroundColor: 'rgba(255, 255, 255, 0.02)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
-                <button
-                  className="flex justify-between items-center w-full px-6 py-4 text-left font-semibold text-white"
-                  onClick={() => setOpenFAQ(openFAQ === 1 ? null : 1)}
-                >
-                  How long does it take to build a Webflow website?
-                  <svg
-                    className={`w-5 h-5 transition-transform transform ${openFAQ === 1 ? 'rotate-180' : 'rotate-0'}`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="2"
+              {FAQS.map((faq, index) => (
+                <div key={index} className="backdrop-blur-md rounded-xl border border-white/10" style={{ backgroundColor: 'rgba(255, 255, 255, 0.02)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
+                  <button
+                    className="flex justify-between items-center w-full px-6 py-4 text-left font-semibold text-white"
+                    onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {openFAQ === 1 && (
-                  <div className="px-6 py-4 text-gray-300 border-t border-white/10">
-                    The timeline for building a Webflow website varies depending on the complexity of the design, features, and content. A simple marketing site might take 4-6 weeks, while a more complex site with custom features could take 8-12 weeks or longer.
-                  </div>
-                )}
-              </div>
-
-              {/* FAQ Item 2 */}
-              <div className="backdrop-blur-md rounded-xl border border-white/10" style={{ backgroundColor: 'rgba(255, 255, 255, 0.02)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
-                <button
-                  className="flex justify-between items-center w-full px-6 py-4 text-left font-semibold text-white"
-                  onClick={() => setOpenFAQ(openFAQ === 2 ? null : 2)}
-                >
-                  What is the cost of a Webflow website?
-                  <svg
-                    className={`w-5 h-5 transition-transform transform ${openFAQ === 2 ? 'rotate-180' : 'rotate-0'}`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {openFAQ === 2 && (
-                  <div className="px-6 py-4 text-gray-300 border-t border-white/10">
-                    Website costs depend on the scope of work, design complexity, and required features. We provide custom quotes after understanding your specific needs during a consultation. Our projects typically start from $X,XXX.
-                  </div>
-                )}
-              </div>
-
-              {/* FAQ Item 3 */}
-              <div className="backdrop-blur-md rounded-xl border border-white/10" style={{ backgroundColor: 'rgba(255, 255, 255, 0.02)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)' }}>
-                <button
-                  className="flex justify-between items-center w-full px-6 py-4 text-left font-semibold text-white"
-                  onClick={() => setOpenFAQ(openFAQ === 3 ? null : 3)}
-                >
-                  Do you provide ongoing support and maintenance?
-                  <svg
-                    className={`w-5 h-5 transition-transform transform ${openFAQ === 3 ? 'rotate-180' : 'rotate-0'}`}
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {openFAQ === 3 && (
-                  <div className="px-6 py-4 text-gray-300 border-t border-white/10">
-                    Yes, we offer ongoing support and maintenance packages to ensure your website remains secure, up-to-date, and performing optimally after launch.
-                  </div>
-                )}
-              </div>
+                    {faq.question}
+                    <svg
+                      className={`w-5 h-5 transition-transform transform ${openFAQ === index ? 'rotate-180' : 'rotate-0'}`}
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {openFAQ === index && (
+                    <div className="px-6 py-4 text-gray-300 border-t border-white/10 whitespace-pre-line">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </section>

@@ -35,11 +35,7 @@ const Header = () => {
         <div className="hidden lg:block">
           <Link
             href="https://calendly.com/webfloexperts/30min"
-            className="ml-2 px-4 sm:px-5 py-1.5 rounded-lg text-xs sm:text-base text-white border bg-[rgba(0,182,255,0.16)]"
-            style={{
-              borderColor: 'rgba(255,255,255,0.15)',
-              boxShadow: 'inset 0 0 6px 3px rgba(255,255,255,0.25), 0 0 0 2px #18181b, 0 2px 8px 0 rgba(0,0,0,0.25)'
-            }}
+            className="ml-2 px-4 sm:px-5 py-1.5 rounded-lg text-xs sm:text-base text-white border border-[rgba(255,255,255,0.15)] bg-[rgba(0,182,255,0.16)] shadow-[inset_0_0_6px_3px_rgba(255,255,255,0.25),0_0_0_2px_#18181b,0_2px_8px_0_rgba(0,0,0,0.25)]"
           >
             Book a Call
           </Link>
@@ -78,11 +74,7 @@ const Header = () => {
           <div className="px-6 w-full">
             <Link
               href="https://calendly.com/webfloexperts/30min"
-              className="w-full block px-6 py-3 rounded-xl text-base text-white border bg-[rgba(0,182,255,0.16)] text-center"
-              style={{
-                borderColor: 'rgba(255,255,255,0.15)',
-                boxShadow: 'inset 0 0 6px 3px rgba(255,255,255,0.25), 0 0 0 2px #18181b, 0 2px 8px 0 rgba(0,0,0,0.25)'
-              }}
+              className="w-full block px-6 py-3 rounded-xl text-base text-white border border-[rgba(255,255,255,0.15)] bg-[rgba(0,182,255,0.16)] text-center shadow-[inset_0_0_6px_3px_rgba(255,255,255,0.25),0_0_0_2px_#18181b,0_2px_8px_0_rgba(0,0,0,0.25)]"
               onClick={() => setMenuOpen(false)}
             >
               Book a Call

@@ -90,7 +90,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={jakarta.variable}>
-      <body className="font-sans text-white antialiased" style={{ backgroundColor: '#020103', fontFamily: 'var(--font-jakarta), sans-serif' }}>
+      <body className="font-sans text-white antialiased" style={{ backgroundColor: '#020103', fontFamily: 'var(--font-jakarta), sans-serif' }} suppressHydrationWarning>
         <Header />
         <main className="pt-20">
           {children}
