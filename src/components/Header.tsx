@@ -19,16 +19,16 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 py-3 border-b border-[#18181b] transition-all duration-300 ${scrolled ? 'bg-[#020103]/80 backdrop-blur-xl' : 'bg-[#020103]/30 backdrop-blur-sm'}`} style={{ WebkitBackdropFilter: scrolled ? 'blur(24px)' : 'blur(4px)', backdropFilter: scrolled ? 'blur(24px)' : 'blur(4px)' }}>
       <div className="mx-auto px-4 sm:px-2 flex items-center gap-2 justify-between max-w-[700px]">
         {/* Logo */}
-        <Link href="/" className="flex items-center mr-2 flex-shrink-0">
+        <Link href="/" className="flex items-center mr-2 flex-shrink-0" suppressHydrationWarning>
           <Image src="/wxlogo.svg" alt="WX Logo" width={48} height={20} className="w-10 h-auto sm:w-[60px]" />
         </Link>
         {/* Nav - pill shaped */}
         <nav className="hidden lg:flex flex-1 justify-center mx-1">
           <ul className="flex space-x-6 sm:space-x-8 text-gray-300 text-xs sm:text-sm font-normal px-3 sm:px-6 py-1.5 sm:py-2 rounded-full border border-[#232326] bg-transparent">
-            <li><Link href="#what-we-do" className="hover:text-white">What we do</Link></li>
-            <li><Link href="#why-us" className="hover:text-white">Why us</Link></li>
-            <li><Link href="#our-works" className="hover:text-white">Our Works</Link></li>
-            <li><Link href="#pricing" className="hover:text-white">Pricing</Link></li>
+            <li><Link href="#what-we-do" className="hover:text-white" suppressHydrationWarning>What we do</Link></li>
+            <li><Link href="#why-us" className="hover:text-white" suppressHydrationWarning>Why us</Link></li>
+            <li><Link href="#our-works" className="hover:text-white" suppressHydrationWarning>Our Works</Link></li>
+            <li><Link href="#pricing" className="hover:text-white" suppressHydrationWarning>Pricing</Link></li>
           </ul>
         </nav>
         {/* Book a Call Button - glassy effect */}
@@ -36,6 +36,7 @@ const Header = () => {
           <Link
             href="https://calendly.com/webfloexperts/30min"
             className="ml-2 px-4 sm:px-5 py-1.5 rounded-lg text-xs sm:text-base text-white border border-[rgba(255,255,255,0.15)] bg-[rgba(0,182,255,0.16)] shadow-[inset_0_0_6px_3px_rgba(255,255,255,0.25),0_0_0_2px_#18181b,0_2px_8px_0_rgba(0,0,0,0.25)]"
+            suppressHydrationWarning
           >
             Book a Call
           </Link>
@@ -66,16 +67,17 @@ const Header = () => {
             </button>
           </div>
           <ul className="flex flex-col space-y-4 text-gray-300 text-lg font-normal mb-4 px-6 text-left">
-            <li><Link href="#what-we-do" className="hover:text-white block w-full" onClick={() => setMenuOpen(false)}>What we do</Link></li>
-            <li><Link href="#why-us" className="hover:text-white block w-full" onClick={() => setMenuOpen(false)}>Why us</Link></li>
-            <li><Link href="#our-works" className="hover:text-white block w-full" onClick={() => setMenuOpen(false)}>Our Works</Link></li>
-            <li><Link href="#pricing" className="hover:text-white block w-full" onClick={() => setMenuOpen(false)}>Pricing</Link></li>
+            <li><Link href="#what-we-do" className="hover:text-white block w-full" onClick={() => setMenuOpen(false)} suppressHydrationWarning>What we do</Link></li>
+            <li><Link href="#why-us" className="hover:text-white block w-full" onClick={() => setMenuOpen(false)} suppressHydrationWarning>Why us</Link></li>
+            <li><Link href="#our-works" className="hover:text-white block w-full" onClick={() => setMenuOpen(false)} suppressHydrationWarning>Our Works</Link></li>
+            <li><Link href="#pricing" className="hover:text-white block w-full" onClick={() => setMenuOpen(false)} suppressHydrationWarning>Pricing</Link></li>
           </ul>
           <div className="px-6 w-full">
             <Link
               href="https://calendly.com/webfloexperts/30min"
               className="w-full block px-6 py-3 rounded-xl text-base text-white border border-[rgba(255,255,255,0.15)] bg-[rgba(0,182,255,0.16)] text-center shadow-[inset_0_0_6px_3px_rgba(255,255,255,0.25),0_0_0_2px_#18181b,0_2px_8px_0_rgba(0,0,0,0.25)]"
               onClick={() => setMenuOpen(false)}
+              suppressHydrationWarning
             >
               Book a Call
             </Link>
