@@ -20,7 +20,7 @@ const Header = () => {
       <div className="mx-auto px-4 sm:px-2 flex items-center gap-2 justify-between max-w-[700px]">
         {/* Logo */}
         <Link href="/" className="flex items-center mr-2 flex-shrink-0">
-          <Image src="/Ayesha's Project Frame 6.svg" alt="WX Logo" width={48} height={20} className="w-10 h-auto sm:w-[60px]" />
+          <Image src="/wxlogo.svg" alt="WX Logo" width={48} height={20} className="w-10 h-auto sm:w-[60px]" />
         </Link>
         {/* Nav - pill shaped */}
         <nav className="hidden lg:flex flex-1 justify-center mx-1">

@@ -91,6 +91,28 @@ export default function RootLayout({
   return (
     <html lang="en" className={jakarta.variable}>
       <body className="font-sans text-white antialiased" style={{ backgroundColor: '#020103', fontFamily: 'var(--font-jakarta), sans-serif' }} suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "WebfloExperts",
+              "url": "https://webfloexperts.com",
+              "logo": "https://webfloexperts.com/wxlogo.svg",
+              "sameAs": [
+                "https://twitter.com/webfloexperts",
+                "https://www.linkedin.com/company/webfloexperts"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "email": "hello@webfloexperts.com"
+              },
+              "description": "Go-to-Market Focused Webflow Agency helping businesses maintain, improve, and scale their digital products."
+            })
+          }}
+        />
         <Header />
         <main className="pt-20">
           {children}

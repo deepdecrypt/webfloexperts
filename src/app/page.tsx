@@ -54,7 +54,7 @@ const CASE_STUDIES = [
     title: 'They built our website and outbound engine the right way',
     quote: 'They rebuilt our site, refined our messaging, and set up a full outbound strategy. It finally gave structure to our pipeline and boosted our GTM momentum.',
     personName: 'Aditya Verma',
-    personRole: 'Marketing Head at Opmaint',
+    personRole: 'Marketing Head at OpMaint',
     avatarUrl: 'https://randomuser.me/api/portraits/men/33.jpg',
     imageSrc: '/work/opmaint.png',
     projectUrl: 'https://opmaint.com'
