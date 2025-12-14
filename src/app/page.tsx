@@ -486,7 +486,7 @@ export default function Home() {
         <section className="relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px] flex flex-col sm:flex-row items-center justify-center px-2 sm:px-4 md:px-8">
           {/* On mobile, show text block above image. On sm+, overlay text on image. */}
           <div className="block sm:hidden w-full">
-            <div className="max-w-4xl w-full mx-auto flex flex-col items-center px-2 text-center pt-12">
+            <div className="max-w-4xl w-full mx-auto flex flex-col items-center px-2 text-center pt-12 relative z-10">
               {/* Badge */}
               <span className="inline-block bg-black/80 text-white px-4 sm:px-8 py-1.5 rounded-full text-sm sm:text-lg font-normal shadow-md mb-4 sm:mb-8 pointer-events-auto" style={{ border: '1.5px solid #232326' }}>
                 Skip Dev Team. Save Time. Drive Results.
